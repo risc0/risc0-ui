@@ -3,7 +3,13 @@ import tailwindcssAnimate from "tailwindcss-animate";
 
 const config = {
   darkMode: ["class"],
-  content: ["../**/*.{js,ts,jsx,tsx}"], // keep this
+  content: [
+    "../../apps/**/*.{ts,tsx}",
+    "../../packages/**/*.{ts,tsx}",
+    "../../node_modules/@risc0/ui/**/*.{ts,tsx}",
+    "./node_modules/@risc0/ui/**/*.{ts,tsx}",
+    "./**/*.{ts,tsx}",
+  ], // keep those imports
   prefix: "",
   theme: {
     container: {
