@@ -1,6 +1,6 @@
 {
   "name": "@risc0/ui",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "repository": {
     "type": "git",
     "url": "https://github.com/risc0/risc0-ui"
@@ -16,7 +16,6 @@
     "update-deps": "bunx npm-check-updates --root --format group -i"
   },
   "dependencies": {
-    "@poppinss/intl-formatter": "3.0.2",
     "@radix-ui/react-checkbox": "1.0.4",
     "@radix-ui/react-dialog": "1.0.5",
     "@radix-ui/react-dropdown-menu": "2.0.6",
@@ -49,6 +48,5 @@
     "tailwindcss": "3.4.3",
     "tailwindcss-animate": "1.0.7",
     "typescript": "5.4.3"
-  },
-  "packageManager": "bun@1.0.35"
+  }
 }
