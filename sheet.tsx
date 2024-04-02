@@ -4,7 +4,7 @@ import * as SheetPrimitive from "@radix-ui/react-dialog";
 import { type VariantProps, cva } from "class-variance-authority";
 import { XIcon } from "lucide-react";
 import { type ComponentPropsWithoutRef, type ElementRef, type HTMLAttributes, forwardRef } from "react";
-import cn from "./shared/cn";
+import cn from "./cn";
 
 const Sheet = SheetPrimitive.Root;
 const SheetTrigger = SheetPrimitive.Trigger;

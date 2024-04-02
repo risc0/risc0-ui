@@ -1,5 +1,5 @@
 import { type HTMLAttributes, type TdHTMLAttributes, type ThHTMLAttributes, forwardRef } from "react";
-import cn from "./shared/cn";
+import cn from "./cn";
 
 const Table = forwardRef<HTMLTableElement, HTMLAttributes<HTMLTableElement>>(({ className, ...rest }, ref) => (
   <div className="relative w-full overflow-auto">

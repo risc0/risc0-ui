@@ -2,7 +2,7 @@
 
 import * as PopoverPrimitive from "@radix-ui/react-popover";
 import { type ComponentPropsWithoutRef, type ElementRef, forwardRef } from "react";
-import cn from "./shared/cn";
+import cn from "./cn";
 
 const Popover = PopoverPrimitive.Root;
 const PopoverTrigger = PopoverPrimitive.Trigger;

@@ -4,7 +4,7 @@ import * as LabelPrimitive from "@radix-ui/react-label";
 import type { VariantProps } from "class-variance-authority";
 import { type ComponentPropsWithoutRef, type ElementRef, forwardRef } from "react";
 import { tv } from "tailwind-variants";
-import cn from "./shared/cn";
+import cn from "./cn";
 
 const labelVariants = tv({
   base: "text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70",
