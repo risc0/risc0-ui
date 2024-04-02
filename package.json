@@ -1,6 +1,6 @@
 {
   "name": "@risc0/ui",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "repository": {
     "type": "git",
     "url": "https://github.com/risc0/risc0-ui"
