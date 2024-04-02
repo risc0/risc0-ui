@@ -1,4 +1,5 @@
 #!/bin/bash
 
+bun run typecheck
 bun run bump:version
 git add package.json
