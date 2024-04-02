@@ -7,11 +7,11 @@ import cn from "./cn";
 const Progress = forwardRef<
   ElementRef<typeof ProgressPrimitive.Root>,
   ComponentPropsWithoutRef<typeof ProgressPrimitive.Root>
->(({ className, value, ...props }, ref) => (
+>(({ className, value, ...rest }, ref) => (
   <ProgressPrimitive.Root
     ref={ref}
     className={cn("relative h-1 w-full overflow-hidden rounded-full bg-primary/20", className)}
-    {...props}
+    {...rest}
   >
     <ProgressPrimitive.Indicator
       className="h-full w-full flex-1 rounded-full bg-primary transition-all"
