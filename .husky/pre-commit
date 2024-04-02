@@ -1,4 +1,4 @@
 #!/bin/bash
 
 bun run bump:version
-git add package.json CHANGELOG.md
+git add package.json
