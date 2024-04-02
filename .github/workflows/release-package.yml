@@ -1,22 +1,16 @@
-name: Release Package
-
 on:
   push:
-    branches: [main]
+    branches: main
 
 jobs:
-  publish-package:
+  publish:
     runs-on: ubuntu-latest
-    permissions:
-      packages: write
-      contents: read
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v3
         with:
-          node-version: 20
-          registry-url: https://npm.pkg.github.com/
+          node-version: "20"
 
-      - run: npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+      - uses: JS-DevTools/npm-publish@v3
+        with:
+          token: ${{ secrets.NPM_TOKEN }}
