@@ -1,6 +1,6 @@
 {
   "name": "@risc0/ui",
-  "version": "0.0.20",
+  "version": "0.0.21",
   "type": "module",
   "scripts": {
     "bump:version": "bunx changelogen --bump --no-output",
@@ -39,6 +39,7 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-hook-form": "7.51.2",
+    "sonner": "^1.4.41",
     "tailwind-merge": "2.2.2",
     "tailwind-variants": "0.2.1",
     "tailwindcss": "3.4.3",
