@@ -1,9 +1,9 @@
 "use client";
 
 import * as DropdownMenuPrimitive from "@radix-ui/react-dropdown-menu";
-import cn from "@web/shared/cn";
 import { CheckIcon, ChevronRightIcon, DotIcon } from "lucide-react";
 import { type ComponentPropsWithoutRef, type ElementRef, type HTMLAttributes, forwardRef } from "react";
+import cn from "./shared/cn";
 
 const DropdownMenuSubTrigger = forwardRef<
   ElementRef<typeof DropdownMenuPrimitive.SubTrigger>,

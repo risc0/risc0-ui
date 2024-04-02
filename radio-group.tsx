@@ -1,8 +1,8 @@
 "use client";
 
 import * as RadioGroupPrimitive from "@radix-ui/react-radio-group";
-import cn from "@web/shared/cn";
 import { type ComponentPropsWithoutRef, type ElementRef, forwardRef } from "react";
+import cn from "./shared/cn";
 
 const RadioGroup = forwardRef<
   ElementRef<typeof RadioGroupPrimitive.Root>,

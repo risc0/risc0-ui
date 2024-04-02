@@ -1,8 +1,8 @@
 "use client";
 
 import * as TooltipPrimitive from "@radix-ui/react-tooltip";
-import cn from "@web/shared/cn";
 import { type ComponentPropsWithoutRef, type ElementRef, forwardRef } from "react";
+import cn from "./shared/cn";
 
 const TooltipContent = forwardRef<
   ElementRef<typeof TooltipPrimitive.Content>,

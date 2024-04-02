@@ -1,6 +1,5 @@
 import type * as LabelPrimitive from "@radix-ui/react-label";
 import { Slot } from "@radix-ui/react-slot";
-import cn from "@web/shared/cn";
 import {
   type ComponentPropsWithoutRef,
   type ElementRef,
@@ -19,6 +18,7 @@ import {
   useFormContext,
 } from "react-hook-form";
 import Label from "./label";
+import cn from "./shared/cn";
 
 const Form = FormProvider;
 
