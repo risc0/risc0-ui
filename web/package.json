@@ -1,16 +1,10 @@
 {
 	"name": "@risc0/ui",
-	"private": true,
 	"version": "0.0.1",
 	"type": "module",
-	"workspaces": ["apps/*", "packages/*"],
 	"scripts": {
-		"build": "turbo build",
-		"ci": "turbo ci",
-		"dev": "turbo dev",
-		"sort-package": "bunx sort-package-json 'package.json' 'apps/*/package.json' 'packages/*/package.json'",
-		"test": "turbo test",
-		"typecheck": "turbo typecheck",
+		"sort-package": "bunx sort-package-json 'package.json'",
+		"typecheck": "tsc",
 		"update-deps": "bunx npm-check-updates --root --format group -i"
 	},
 	"dependencies": {
