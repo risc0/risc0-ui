@@ -1,4 +1,4 @@
-name: Node.js Package
+name: Release Package
 
 on:
   push:
@@ -17,6 +17,7 @@ jobs:
         with:
           node-version: 20
           registry-url: https://npm.pkg.github.com/
+
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
