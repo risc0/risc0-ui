@@ -1,5 +1,7 @@
 # `@risc0/ui` 🎨
 
+Building blocks for UI applications at RISC Zero.
+
 #### Before You Start
 
 - Install [Node](https://nodejs.org/en) (≥ v20.x.x)
