@@ -1,6 +1,6 @@
 {
   "name": "@risc0/ui",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "repository": {
     "type": "git",
     "url": "https://github.com/risc0/risc0-ui"
@@ -9,7 +9,7 @@
   "scripts": {
     "bump:version": "bunx changelogen --bump --no-output",
     "check": "bunx @biomejs/biome check . --apply-unsafe",
-    "prepare": "bunx husky",
+    "prepare": "npx husky",
     "sort-package": "bunx sort-package-json 'package.json'",
     "test": "bun test spec",
     "typecheck": "tsc",
