@@ -1,7 +1,16 @@
 {
 	"name": "@risc0/ui",
 	"version": "0.0.1",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/risc0/risc0-ui"
+	},
 	"type": "module",
+	"files": [
+		"shared",
+		"ui",
+		"tsconfig.base.json"
+	],
 	"scripts": {
 		"sort-package": "bunx sort-package-json 'package.json'",
 		"typecheck": "tsc",

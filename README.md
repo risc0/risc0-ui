@@ -1,4 +1,4 @@
-# Web Monorepo 🌳
+# `@risc0/ui` 🎨
 
 #### Before You Start
 
@@ -8,12 +8,3 @@
 > #### General
 >
 > When making code changes, please have the [Biome VSCode extension](https://marketplace.visualstudio.com/items?itemName=biomejs.biome) installed.
-
-## Apps 👾
-
-- [`@web/reports`](./apps/management) → the RISC Zero reports app
-
-## Packages 📦
-
-- [`@web/ui`](./packages/ui) → shared components between apps and packages.
-- [`@web/shared`](./packages/utils) → shared utils, constants, and hooks between apps and packages.
