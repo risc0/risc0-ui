@@ -1,12 +1,5 @@
 {
   "extends": "./tsconfig.base.json",
-  "compilerOptions": {
-    /* Path Aliases */
-    "baseUrl": ".",
-    "paths": {
-      "~/*": ["./*"]
-    }
-  },
   "include": ["**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]
 }
