@@ -1,0 +1,7 @@
+node_modules
+.github
+.husky
+.gitignore
+biome.jsonc
+components.json
+tsconfig.tsbuildinfo

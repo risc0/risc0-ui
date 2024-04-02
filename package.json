@@ -1,7 +1,8 @@
 {
   "name": "@risc0/ui",
-  "version": "0.0.23",
+  "version": "0.0.24",
   "type": "module",
+  "sideEffects": false,
   "scripts": {
     "bump:version": "bunx changelogen --bump --no-output",
     "check": "bunx @biomejs/biome check . --apply-unsafe",
