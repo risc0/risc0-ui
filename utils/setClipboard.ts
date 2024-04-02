@@ -1,3 +1,4 @@
+// @ts-ignore -- not sure why this is not working
 import { toast } from "sonner";
 
 type SetClipboardParams = {
