@@ -1,0 +1,4 @@
+#!/bin/bash
+
+bun run bump:version
+git add package.json
