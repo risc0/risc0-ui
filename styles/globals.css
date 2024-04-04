@@ -64,22 +64,22 @@
 
   /* usually h1 */
   .title {
-    @apply text-3xl font-bold tracking-tight;
+    @apply text-3xl font-bold;
   }
 
   /* usually h2 */
   .title-sm {
-    @apply text-2xl font-semibold tracking-tight;
+    @apply text-2xl font-semibold;
   }
 
   /* usually h3 */
   .subtitle {
-    @apply text-xl font-semibold tracking-tight;
+    @apply text-xl font-semibold;
   }
 
   /* usually h4 */
   .subtitle-sm {
-    @apply text-lg font-medium tracking-tight;
+    @apply text-lg font-medium;
   }
 
   /* Don't use h5/h6 */

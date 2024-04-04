@@ -24,7 +24,7 @@ const Alert = forwardRef<HTMLDivElement, HTMLAttributes<HTMLDivElement> & Varian
 
 const AlertTitle = forwardRef<HTMLParagraphElement, HTMLAttributes<HTMLHeadingElement>>(
   ({ className, ...rest }, ref) => (
-    <h3 ref={ref} className={cn("mb-1 font-medium leading-none tracking-tight", className)} {...rest} />
+    <h3 ref={ref} className={cn("mb-1 font-medium leading-none", className)} {...rest} />
   ),
 );
 

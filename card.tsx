@@ -10,9 +10,7 @@ const CardHeader = forwardRef<HTMLDivElement, HTMLAttributes<HTMLDivElement>>(({
 ));
 
 const CardTitle = forwardRef<HTMLParagraphElement, HTMLAttributes<HTMLHeadingElement>>(
-  ({ className, ...rest }, ref) => (
-    <h2 ref={ref} className={cn("font-semibold leading-none tracking-tight", className)} {...rest} />
-  ),
+  ({ className, ...rest }, ref) => <h2 ref={ref} className={cn("font-semibold leading-none", className)} {...rest} />,
 );
 
 const CardDescription = forwardRef<HTMLParagraphElement, HTMLAttributes<HTMLParagraphElement>>(
