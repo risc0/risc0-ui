@@ -1,0 +1,23 @@
+/* includes font-weights from 100-300 */
+@font-face {
+  font-family: "Europa";
+  src: url('/EuropaGroteskSH-Lig.otf');
+  font-weight: lighter;
+  font-style: normal;
+}
+
+/* includes font-weights from 400-500 */
+@font-face {
+  font-family: "Europa";
+  src: url('/EuropaGroteskSH-Reg.otf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* includes font-weights from 600-900 */
+@font-face {
+  font-family: "Europa";
+  src: url('/EuropaGroteskSH-Med.otf');
+  font-weight: bold;
+  font-style: normal;
+}
