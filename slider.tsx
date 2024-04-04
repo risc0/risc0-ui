@@ -2,7 +2,7 @@
 
 import * as SliderPrimitive from "@radix-ui/react-slider";
 import { type ComponentPropsWithoutRef, type ElementRef, forwardRef } from "react";
-import cn from "./cn";
+import { cn } from "./cn";
 
 const Slider = forwardRef<
   ElementRef<typeof SliderPrimitive.Root>,
@@ -22,4 +22,4 @@ const Slider = forwardRef<
 
 Slider.displayName = SliderPrimitive.Root.displayName;
 
-export default Slider;
+export { Slider };

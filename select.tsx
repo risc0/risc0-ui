@@ -3,7 +3,7 @@
 import * as SelectPrimitive from "@radix-ui/react-select";
 import { CheckIcon, ChevronDownIcon, ChevronUpIcon, ChevronsUpDownIcon } from "lucide-react";
 import { type ComponentPropsWithoutRef, type ElementRef, forwardRef } from "react";
-import cn from "./cn";
+import { cn } from "./cn";
 
 const SelectTrigger = forwardRef<
   ElementRef<typeof SelectPrimitive.Trigger>,

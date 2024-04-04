@@ -9,4 +9,4 @@ const parseJSON = <T>(value?: string | null): T | undefined => {
   }
 };
 
-export default parseJSON;
+export { parseJSON };

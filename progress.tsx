@@ -2,7 +2,7 @@
 
 import * as ProgressPrimitive from "@radix-ui/react-progress";
 import { type ComponentPropsWithoutRef, type ElementRef, forwardRef } from "react";
-import cn from "./cn";
+import { cn } from "./cn";
 
 const Progress = forwardRef<
   ElementRef<typeof ProgressPrimitive.Root>,
@@ -22,4 +22,4 @@ const Progress = forwardRef<
 
 Progress.displayName = ProgressPrimitive.Root.displayName;
 
-export default Progress;
+export { Progress };

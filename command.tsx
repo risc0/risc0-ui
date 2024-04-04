@@ -4,7 +4,7 @@ import type { DialogProps } from "@radix-ui/react-dialog";
 import { Command as CommandPrimitive } from "cmdk";
 import { SearchIcon } from "lucide-react";
 import { type ComponentPropsWithoutRef, type ElementRef, type HTMLAttributes, forwardRef } from "react";
-import cn from "./cn";
+import { cn } from "./cn";
 import { Dialog, DialogContent } from "./dialog";
 
 const Command = forwardRef<ElementRef<typeof CommandPrimitive>, ComponentPropsWithoutRef<typeof CommandPrimitive>>(
@@ -19,9 +19,8 @@ const Command = forwardRef<ElementRef<typeof CommandPrimitive>, ComponentPropsWi
     />
   ),
 );
-Command.displayName = CommandPrimitive.displayName;
 
-interface CommandDialogProps extends DialogProps {}
+export interface CommandDialogProps extends DialogProps {}
 
 const CommandDialog = ({ children, ...rest }: CommandDialogProps) => {
   return (
@@ -65,14 +64,10 @@ const CommandList = forwardRef<
   />
 ));
 
-CommandList.displayName = CommandPrimitive.List.displayName;
-
 const CommandEmpty = forwardRef<
   ElementRef<typeof CommandPrimitive.Empty>,
   ComponentPropsWithoutRef<typeof CommandPrimitive.Empty>
 >((props, ref) => <CommandPrimitive.Empty ref={ref} className="py-6 text-center text-sm" {...props} />);
-
-CommandEmpty.displayName = CommandPrimitive.Empty.displayName;
 
 const CommandGroup = forwardRef<
   ElementRef<typeof CommandPrimitive.Group>,
@@ -88,15 +83,12 @@ const CommandGroup = forwardRef<
   />
 ));
 
-CommandGroup.displayName = CommandPrimitive.Group.displayName;
-
 const CommandSeparator = forwardRef<
   ElementRef<typeof CommandPrimitive.Separator>,
   ComponentPropsWithoutRef<typeof CommandPrimitive.Separator>
 >(({ className, ...rest }, ref) => (
   <CommandPrimitive.Separator ref={ref} className={cn("-mx-1 h-px bg-border", className)} {...rest} />
 ));
-CommandSeparator.displayName = CommandPrimitive.Separator.displayName;
 
 const CommandItem = forwardRef<
   ElementRef<typeof CommandPrimitive.Item>,
@@ -112,12 +104,17 @@ const CommandItem = forwardRef<
   />
 ));
 
-CommandItem.displayName = CommandPrimitive.Item.displayName;
-
 const CommandShortcut = ({ className, ...rest }: HTMLAttributes<HTMLSpanElement>) => {
   return <span className={cn("ml-auto text-muted-foreground text-xs tracking-widest", className)} {...rest} />;
 };
+
 CommandShortcut.displayName = "CommandShortcut";
+CommandGroup.displayName = CommandPrimitive.Group.displayName;
+CommandSeparator.displayName = CommandPrimitive.Separator.displayName;
+CommandEmpty.displayName = CommandPrimitive.Empty.displayName;
+Command.displayName = CommandPrimitive.displayName;
+CommandList.displayName = CommandPrimitive.List.displayName;
+CommandItem.displayName = CommandPrimitive.Item.displayName;
 
 export {
   Command,

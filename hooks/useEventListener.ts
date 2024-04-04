@@ -45,4 +45,4 @@ const useEventListener = <T extends HTMLElement = HTMLDivElement>(
   }, [eventName, element, handler]);
 };
 
-export default useEventListener;
+export { useEventListener };

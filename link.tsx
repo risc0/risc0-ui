@@ -4,7 +4,7 @@ import { addBasePath } from "next/dist/client/add-base-path";
 import NextLink from "next/link";
 import NProgress from "nprogress";
 import { type ComponentProps, type MouseEvent, forwardRef } from "react";
-import cn from "./cn";
+import { cn } from "./cn";
 
 function onStart() {
   NProgress.start();
@@ -81,4 +81,4 @@ const Link = forwardRef<HTMLAnchorElement, ComponentProps<"a">>(function Link(
   );
 });
 
-export default Link;
+export { Link };

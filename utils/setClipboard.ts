@@ -1,11 +1,11 @@
 // @ts-ignore -- not sure why this is not working
 import { toast } from "sonner";
 
-type SetClipboardParams = {
+export interface SetClipboardParams {
   onFailure?: () => void;
   onSuccess?: () => void;
   value: string;
-};
+}
 
 const setClipboard = ({
   value,
@@ -22,4 +22,4 @@ const setClipboard = ({
     });
 };
 
-export default setClipboard;
+export { setClipboard };

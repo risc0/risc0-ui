@@ -2,7 +2,7 @@
 
 import * as SeparatorPrimitive from "@radix-ui/react-separator";
 import { type ComponentPropsWithoutRef, type ElementRef, forwardRef } from "react";
-import cn from "./cn";
+import { cn } from "./cn";
 
 const Separator = forwardRef<
   ElementRef<typeof SeparatorPrimitive.Root>,
@@ -19,4 +19,4 @@ const Separator = forwardRef<
 
 Separator.displayName = SeparatorPrimitive.Root.displayName;
 
-export default Separator;
+export { Separator };

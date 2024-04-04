@@ -1,7 +1,7 @@
 import { isEqual, isFunction, isNil } from "lodash-es";
 import { type Dispatch, type SetStateAction, useEffect, useRef, useState } from "react";
-import parseJSON from "../utils/parseJSON";
-import useEventListener from "./useEventListener";
+import { parseJSON } from "../utils/parseJSON";
+import { useEventListener } from "./useEventListener";
 
 type SetValue<T> = Dispatch<SetStateAction<T>>;
 
@@ -106,4 +106,4 @@ const useLocalStorage = <T>(key: string, initialValue: T): [T, SetValue<T>] => {
   return [storedValue, setValue];
 };
 
-export default useLocalStorage;
+export { useLocalStorage };

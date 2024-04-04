@@ -1,3 +1,3 @@
-export default function Required() {
+export function Required() {
   return <span className="text-destructive">*</span>;
 }

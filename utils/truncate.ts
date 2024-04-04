@@ -19,4 +19,4 @@ const truncate = (text: string, chars = 9): string => {
   return `${firstChunk}…${lastChunk}`;
 };
 
-export default truncate;
+export { truncate };
