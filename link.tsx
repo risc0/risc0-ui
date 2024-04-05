@@ -57,7 +57,7 @@ const Link = forwardRef<HTMLAnchorElement, ComponentProps<"a">>(function Link(
   const useNextJsLink = href?.startsWith("/");
 
   if (!useNextJsLink) {
-    return <a href={href} onClick={onClick} {...rest} />;
+    return <a href={href} onClick={onClick} className={className} {...rest} />;
   }
 
   return (
