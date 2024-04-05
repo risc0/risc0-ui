@@ -1,6 +1,6 @@
 {
   "name": "@risc0/ui",
-  "version": "0.0.39",
+  "version": "0.0.40",
   "sideEffects": false,
   "type": "module",
   "scripts": {
@@ -32,7 +32,7 @@
     "clsx": "2.1.0",
     "cmdk": "0.2.0",
     "lodash-es": "4.17.21",
-    "lucide-react": "0.364.0",
+    "lucide-react": "0.365.0",
     "next-themes": "0.3.0",
     "nprogress": "0.2.0",
     "react-hook-form": "7.51.2",
@@ -41,7 +41,7 @@
     "tailwind-variants": "0.2.1",
     "tailwindcss": "3.4.3",
     "tailwindcss-animate": "1.0.7",
-    "typescript": "5.4.3"
+    "typescript": "5.4.4"
   },
   "peerDependencies": {
     "@types/react": "^18",
