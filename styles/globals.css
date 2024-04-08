@@ -90,6 +90,21 @@
   }
 }
 
+html {
+  /* prevent layout shifts when the scrollbar appears */
+  scrollbar-gutter: stable;
+}
+
+body[style] {
+  margin: 0 auto !important;
+}
+
+body[data-scroll-locked] {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+}
+
 /* Custom rules */
 iframe {
   /* for google login button having a white background otherwise */
@@ -98,7 +113,7 @@ iframe {
 
 .lucide {
   /* bigger stroke for ALL icons */
-  stroke-width: 2.25px;
+  stroke-width: 1.75px !important;
 }
 
 /* NProgress (top progress bar on page load) */
