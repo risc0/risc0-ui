@@ -36,15 +36,16 @@ const BreadcrumbLink = forwardRef<
   return <Comp ref={ref} className={cn("transition-colors hover:text-foreground", className)} {...props} />;
 });
 
-const BreadcrumbPage = forwardRef<HTMLSpanElement, ComponentPropsWithoutRef<"span">>(({ className, ...props }, ref) => (
-  <span
-    ref={ref}
-    role="link"
-    aria-disabled="true"
-    aria-current="page"
-    className={cn("font-normal text-foreground", className)}
-    {...props}
-  />
+const BreadcrumbPage = forwardRef<HTMLLIElement, ComponentPropsWithoutRef<"li">>(({ className, ...props }, ref) => (
+  <li ref={ref}>
+    <span
+      role="link"
+      aria-disabled="true"
+      aria-current="page"
+      className={cn("font-normal text-foreground", className)}
+      {...props}
+    />
+  </li>
 ));
 
 const BreadcrumbSeparator = ({ children, className, ...props }: ComponentProps<"li">) => (
