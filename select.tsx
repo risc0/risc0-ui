@@ -1,25 +1,48 @@
 "use client";
 
 import * as SelectPrimitive from "@radix-ui/react-select";
+import { type VariantProps, cva } from "class-variance-authority";
 import { CheckIcon, ChevronDownIcon, ChevronUpIcon, ChevronsUpDownIcon } from "lucide-react";
 import { type ComponentPropsWithoutRef, type ElementRef, forwardRef } from "react";
 import { cn } from "./cn";
 
+const selectVariants = cva(
+  "flex h-9 w-full items-center justify-between whitespace-nowrap rounded-md border border-input bg-transparent px-3 py-2 text-sm ring-offset-background [&>span]:line-clamp-1 disabled:cursor-not-allowed placeholder:text-muted-foreground disabled:opacity-50 focus:outline-none focus:ring-1 focus:ring-ring",
+  {
+    variants: {
+      size: {
+        default: "h-9 px-4 py-2",
+        sm: "h-8 rounded-md px-3 text-xs",
+        lg: "h-10 rounded-md px-8 text-lg",
+      },
+    },
+    defaultVariants: {
+      size: "default",
+    },
+  },
+);
+
+const iconVariants = cva(undefined, {
+  variants: {
+    size: {
+      default: "size-4",
+      sm: "size-3",
+      lg: "size-5",
+    },
+  },
+  defaultVariants: {
+    size: "default",
+  },
+});
+
 const SelectTrigger = forwardRef<
   ElementRef<typeof SelectPrimitive.Trigger>,
-  ComponentPropsWithoutRef<typeof SelectPrimitive.Trigger>
->(({ className, children, ...rest }, ref) => (
-  <SelectPrimitive.Trigger
-    ref={ref}
-    className={cn(
-      "flex h-9 w-full items-center justify-between whitespace-nowrap rounded-md border border-input bg-transparent px-3 py-2 text-sm shadow-sm ring-offset-background [&>span]:line-clamp-1 disabled:cursor-not-allowed placeholder:text-muted-foreground disabled:opacity-50 focus:outline-none focus:ring-1 focus:ring-ring",
-      className,
-    )}
-    {...rest}
-  >
+  ComponentPropsWithoutRef<typeof SelectPrimitive.Trigger> & VariantProps<typeof selectVariants>
+>(({ className, size, children, ...rest }, ref) => (
+  <SelectPrimitive.Trigger ref={ref} className={cn(selectVariants({ size, className }))} {...rest}>
     {children}
     <SelectPrimitive.Icon asChild>
-      <ChevronsUpDownIcon className="size-4 opacity-50" />
+      <ChevronsUpDownIcon className={cn("ml-2", iconVariants({ size }))} />
     </SelectPrimitive.Icon>
   </SelectPrimitive.Trigger>
 ));
