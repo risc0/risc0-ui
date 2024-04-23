@@ -1,5 +1,5 @@
 {
-  "$schema": "https://biomejs.dev/schemas/1.6.3/schema.json",
+  "$schema": "https://biomejs.dev/schemas/1.7.1/schema.json",
   "files": {
     "ignore": [".next", ".vercel", "*.spec.*", "*.test.*", "build", "dist", "node_modules"],
     "ignoreUnknown": true
@@ -17,6 +17,7 @@
         "useHookAtTopLevel": "error"
       },
       "complexity": {
+        "noUselessTernary": "warn",
         "noUselessLoneBlockStatements": "warn"
       },
       "suspicious": {
@@ -39,7 +40,6 @@
         "useNumberNamespace": "error"
       },
       "nursery": {
-        "noUselessTernary": "warn",
         "useSortedClasses": "warn"
       }
     }

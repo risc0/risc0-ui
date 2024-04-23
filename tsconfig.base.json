@@ -15,6 +15,7 @@
     "noUncheckedIndexedAccess": true,
     "verbatimModuleSyntax": true,
     "noImplicitAny": false,
+    "noImplicitOverride": true,
 
     /* Bundled projects */
     "incremental": true,
