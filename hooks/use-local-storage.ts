@@ -1,7 +1,7 @@
 import { isEqual, isFunction, isNil } from "lodash-es";
 import { type Dispatch, type SetStateAction, useEffect, useRef, useState } from "react";
-import { parseJSON } from "../utils/parseJSON";
-import { useEventListener } from "./useEventListener";
+import { parseJson } from "../utils/parse-json";
+import { useEventListener } from "./use-event-listener";
 
 type SetValue<T> = Dispatch<SetStateAction<T>>;
 
@@ -16,7 +16,7 @@ const readValueFromStorage = <T>(key: string) => {
   try {
     const item = window.localStorage.getItem(key);
 
-    const value = item && (parseJSON(item) as T);
+    const value = item && (parseJson(item) as T);
 
     return value ?? undefined;
   } catch (error) {
@@ -32,7 +32,7 @@ type StorageError = {
 
 const isError = (value: StorageError | any): value is StorageError => !!value?.error;
 
-const useLocalStorage = <T>(key: string, initialValue: T): [T, SetValue<T>] => {
+export const useLocalStorage = <T>(key: string, initialValue: T): [T, SetValue<T>] => {
   const previousValueRef = useRef(initialValue);
 
   // Get from local storage then
@@ -105,5 +105,3 @@ const useLocalStorage = <T>(key: string, initialValue: T): [T, SetValue<T>] => {
 
   return [storedValue, setValue];
 };
-
-export { useLocalStorage };

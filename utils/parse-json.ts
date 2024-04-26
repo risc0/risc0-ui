@@ -1,5 +1,5 @@
 // A wrapper for "JSON.parse()"" to support "undefined" value
-const parseJSON = <T>(value?: string | null): T | undefined => {
+export const parseJson = <T>(value?: string | null): T | undefined => {
   try {
     return value === "undefined" ? undefined : (JSON.parse(value ?? "") as T);
   } catch {
@@ -8,5 +8,3 @@ const parseJSON = <T>(value?: string | null): T | undefined => {
     return undefined;
   }
 };
-
-export { parseJSON };

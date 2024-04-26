@@ -8,7 +8,7 @@ import { type RefObject, useEffect, useRef } from "react";
  * @param [element] - The element to listen to the event on. If not provided, it will default to
  * window.
  */
-const useEventListener = <T extends HTMLElement = HTMLDivElement>(
+export const useEventListener = <T extends HTMLElement = HTMLDivElement>(
   eventName: keyof WindowEventMap | string, // string to allow custom event
   handler: (event: Event) => void,
   element?: RefObject<T>,
@@ -44,5 +44,3 @@ const useEventListener = <T extends HTMLElement = HTMLDivElement>(
     };
   }, [eventName, element, handler]);
 };
-
-export { useEventListener };

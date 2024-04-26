@@ -1,0 +1,94 @@
+{
+  "$schema": "https://biomejs.dev/schemas/1.7.1/schema.json",
+  "files": {
+    "ignore": [".next", ".vercel", "*.spec.*", "*.test.*", "build", "dist", "node_modules"],
+    "ignoreUnknown": true
+  },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "a11y": {
+        "noSvgWithoutTitle": "off"
+      },
+      "correctness": {
+        "noUndeclaredVariables": "error",
+        "noUnusedVariables": "warn",
+        "noUnusedImports": "off",
+        "useHookAtTopLevel": "error"
+      },
+      "complexity": {
+        "noUselessTernary": "warn",
+        "noUselessLoneBlockStatements": "warn"
+      },
+      "suspicious": {
+        "noArrayIndexKey": "warn",
+        "useAwait": "warn",
+        "noConsoleLog": "warn",
+        "noExplicitAny": "off",
+        "noImplicitAnyLet": "off",
+        "noEmptyBlockStatements": "warn"
+      },
+      "performance": {
+        "noBarrelFile": "warn",
+        "noReExportAll": "warn"
+      },
+      "style": {
+        "useNodejsImportProtocol": "off",
+        "noNonNullAssertion": "warn",
+        "noNegationElse": "warn",
+        "useBlockStatements": "error",
+        "useCollapsedElseIf": "error",
+        "useFragmentSyntax": "error",
+        "useShorthandArrayType": "error",
+        "useConsistentArrayType": "warn",
+        "useExportType": "error",
+        "useSingleCaseStatement": "error",
+        "useNumberNamespace": "error",
+        "useFilenamingConvention": {
+          "level": "warn",
+          "options": {
+            "strictCase": true,
+            "requireAscii": true,
+            "filenameCases": ["kebab-case"]
+          }
+        }
+      },
+      "nursery": {
+        "useSortedClasses": {
+          "level": "warn",
+          "options": {
+            "attributes": ["classList"],
+            "functions": ["clsx", "cva", "tw", "cn"]
+          }
+        }
+      }
+    }
+  },
+  "formatter": {
+    "indentWidth": 2,
+    "indentStyle": "space",
+    "enabled": true,
+    "lineWidth": 120
+  },
+  "organizeImports": {
+    "enabled": true
+  },
+  "javascript": {
+    "formatter": {
+      "arrowParentheses": "always",
+      "jsxQuoteStyle": "double",
+      "quoteStyle": "double",
+      "quoteProperties": "asNeeded",
+      "trailingComma": "all",
+      "semicolons": "always",
+      "bracketSpacing": true,
+      "bracketSameLine": false,
+      "lineWidth": 120
+    }
+  },
+  "json": {
+    "parser": {
+      "allowComments": true
+    }
+  }
+}

@@ -7,7 +7,7 @@ export interface SetClipboardParams {
   value: string;
 }
 
-const setClipboard = ({
+export const setClipboard = ({
   value,
   onSuccess = () => toast.success("Copied to clipboard"),
   onFailure = () => toast.error("Failed to copy to clipboard"),
@@ -21,5 +21,3 @@ const setClipboard = ({
       onFailure?.();
     });
 };
-
-export { setClipboard };

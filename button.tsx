@@ -5,7 +5,7 @@ import { type ButtonHTMLAttributes, type ReactElement, cloneElement, forwardRef 
 import { cn } from "./cn";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50",
+  "inline-flex items-center justify-center whitespace-nowrap rounded-md font-medium text-sm transition-colors disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring",
   {
     variants: {
       variant: {
@@ -36,8 +36,8 @@ const iconVariants = cva(undefined, {
       default: "size-4",
       sm: "size-3",
       lg: "size-5",
-      icon: "size-4 mr-0",
-      "icon-sm": "size-3 mr-0",
+      icon: "mr-0 size-4",
+      "icon-sm": "mr-0 size-3",
     },
   },
   defaultVariants: {
