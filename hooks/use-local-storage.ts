@@ -15,7 +15,6 @@ type SetValue<T> = Dispatch<SetStateAction<T>>;
 const readValueFromStorage = <T>(key: string) => {
   try {
     const item = window.localStorage.getItem(key);
-
     const value = item && (parseJson(item) as T);
 
     return value ?? undefined;
