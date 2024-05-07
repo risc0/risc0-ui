@@ -1,5 +1,6 @@
 #!/bin/bash
 
 bun run check
+bun run test
 bun run bump:version
 git add .

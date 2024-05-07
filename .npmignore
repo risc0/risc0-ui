@@ -8,3 +8,4 @@ tsconfig.tsbuildinfo
 *.test.*
 *.spec.*
 vitest.config.ts
+setupTests.ts

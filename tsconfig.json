@@ -2,7 +2,8 @@
   "extends": "./tsconfig.base.json",
   "compilerOptions": {
     /* Path Aliases */
-    "baseUrl": "."
+    "baseUrl": ".",
+    "types": ["node", "jest", "@testing-library/jest-dom"]
   },
   "include": ["**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]

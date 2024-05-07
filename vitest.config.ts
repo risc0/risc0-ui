@@ -9,6 +9,7 @@ export default defineConfig({
     environment: "happy-dom",
     globals: true,
     restoreMocks: true,
+    setupFiles: "./setupTests.ts",
     include: ["**/*.test.?(c|m)[jt]s?(x)"],
   },
 });
