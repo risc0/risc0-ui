@@ -4,7 +4,7 @@ export const parseJson = <T>(value?: string | null): T | undefined => {
     return value === "undefined" ? undefined : (JSON.parse(value ?? "") as T);
   } catch {
     console.error("parsing error on", { value });
-  }
 
-  return;
+    return undefined;
+  }
 };
