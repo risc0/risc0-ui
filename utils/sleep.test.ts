@@ -1,11 +1,11 @@
-import { sleep } from './sleep';
+import { sleep } from "./sleep";
 
-describe('sleep function', () => {
-  it('should return a Promise', () => {
+describe("sleep function", () => {
+  it("should return a Promise", () => {
     expect(sleep(10)).toBeInstanceOf(Promise);
   });
 
-  it('should resolve after specified time', async () => {
+  it("should resolve after specified time", async () => {
     const time = 10;
     const promise = sleep(time);
 

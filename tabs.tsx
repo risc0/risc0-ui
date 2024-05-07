@@ -10,6 +10,7 @@ const TabsList = forwardRef<ElementRef<typeof TabsPrimitive.List>, ComponentProp
   ({ className, ...rest }, ref) => (
     <TabsPrimitive.List
       ref={ref}
+      data-testid="tabs-list"
       className={cn(
         "inline-flex h-9 items-center justify-center rounded-lg bg-muted p-1 text-muted-foreground",
         className,

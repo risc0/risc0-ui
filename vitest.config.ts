@@ -9,7 +9,7 @@ export default defineConfig({
     environment: "happy-dom",
     globals: true,
     restoreMocks: true,
-    setupFiles: "./setupTests.ts",
+    setupFiles: "./setup-tests.ts",
     coverage: {
       reporter: ["json-summary", "text"],
     },

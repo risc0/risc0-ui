@@ -1,28 +1,28 @@
-import { Skeleton } from './skeleton';
-import { render, screen } from '@testing-library/react';
+import { render, screen } from "@testing-library/react";
+import { Skeleton } from "./skeleton";
 
-describe('Skeleton', () => {
-  test('renders without crashing', () => {
+describe("Skeleton", () => {
+  test("renders without crashing", () => {
     render(<Skeleton />);
-    const skeletonElement = screen.getByRole('presentation');
+    const skeletonElement = screen.getByRole("presentation");
     expect(skeletonElement).toBeInTheDocument();
   });
 
-  test('has correct default classes', () => {
+  test("has correct default classes", () => {
     render(<Skeleton />);
-    const skeletonElement = screen.getByRole('presentation');
-    expect(skeletonElement).toHaveClass('animate-pulse rounded-md bg-primary/10');
+    const skeletonElement = screen.getByRole("presentation");
+    expect(skeletonElement).toHaveClass("animate-pulse rounded-md bg-primary/10");
   });
 
-  test('correctly applies additional classes', () => {
-    const additionalClass = 'additional-class';
+  test("correctly applies additional classes", () => {
+    const additionalClass = "additional-class";
     render(<Skeleton className={additionalClass} />);
-    const skeletonElement = screen.getByRole('presentation');
-    expect(skeletonElement).toHaveClass('animate-pulse rounded-md bg-primary/10', additionalClass);
+    const skeletonElement = screen.getByRole("presentation");
+    expect(skeletonElement).toHaveClass("animate-pulse rounded-md bg-primary/10", additionalClass);
   });
 
-  test('correctly applies additional props', () => {
-    const testId = 'skeleton';
+  test("correctly applies additional props", () => {
+    const testId = "skeleton";
     render(<Skeleton data-testid={testId} />);
     const skeletonElement = screen.getByTestId(testId);
     expect(skeletonElement).toBeInTheDocument();
