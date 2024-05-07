@@ -72,12 +72,17 @@ type FormItemContextValue = {
 
 const FormItemContext = createContext<FormItemContextValue>({} as FormItemContextValue);
 
-const FormItem = forwardRef<HTMLDivElement, HTMLAttributes<HTMLDivElement>>(({ className, ...rest }, ref) => {
+const FormItem = forwardRef<
+  HTMLDivElement,
+  HTMLAttributes<HTMLDivElement> & {
+    dense?: boolean;
+  }
+>(({ className, dense = true, ...rest }, ref) => {
   const id = useId();
 
   return (
     <FormItemContext.Provider value={{ id }}>
-      <div ref={ref} className={cn("space-y-2", className)} {...rest} />
+      <div ref={ref} className={cn("space-y-2", dense && "space-y-1", className)} {...rest} />
     </FormItemContext.Provider>
   );
 });
