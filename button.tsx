@@ -59,6 +59,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     return (
       <Component className={cn(buttonVariants({ variant, size, className }))} ref={ref} {...rest}>
         <Loader2Icon
+          data-testid="loader-icon"
           className={cn(
             iconVariants({}),
             "animate-spin",
