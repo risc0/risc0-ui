@@ -9,3 +9,4 @@ tsconfig.tsbuildinfo
 *.spec.*
 vitest.config.ts
 setupTests.ts
+coverage

@@ -24,7 +24,7 @@ export interface BadgeProps extends HTMLAttributes<HTMLDivElement>, VariantProps
 }
 
 function Badge({ className, variant, ...rest }: BadgeProps) {
-  return <div className={cn(badgeVariants({ variant }), className)} {...rest} />;
+  return <div data-testid="badge" className={cn(badgeVariants({ variant }), className)} {...rest} />;
 }
 
 export { Badge, badgeVariants };

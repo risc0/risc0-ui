@@ -10,6 +10,8 @@ export default defineConfig({
     globals: true,
     restoreMocks: true,
     setupFiles: "./setupTests.ts",
-    include: ["**/*.test.?(c|m)[jt]s?(x)"],
+    coverage: {
+      reporter: ["json-summary", "text"],
+    },
   },
 });
