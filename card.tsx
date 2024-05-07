@@ -2,11 +2,11 @@ import { type HTMLAttributes, forwardRef } from "react";
 import { cn } from "./cn";
 
 const Card = forwardRef<HTMLDivElement, HTMLAttributes<HTMLDivElement>>(({ className, ...rest }, ref) => (
-  <div ref={ref} className={cn("rounded-xl border bg-card text-card-foreground", className)} {...rest} />
+  <div ref={ref} role="region" className={cn("rounded-xl border bg-card text-card-foreground", className)} {...rest} />
 ));
 
 const CardHeader = forwardRef<HTMLDivElement, HTMLAttributes<HTMLDivElement>>(({ className, ...rest }, ref) => (
-  <div ref={ref} className={cn("flex flex-col space-y-1.5 p-6", className)} {...rest} />
+  <div ref={ref} data-testid="card-header" className={cn("flex flex-col space-y-1.5 p-6", className)} {...rest} />
 ));
 
 const CardTitle = forwardRef<HTMLParagraphElement, HTMLAttributes<HTMLHeadingElement>>(
@@ -14,15 +14,17 @@ const CardTitle = forwardRef<HTMLParagraphElement, HTMLAttributes<HTMLHeadingEle
 );
 
 const CardDescription = forwardRef<HTMLParagraphElement, HTMLAttributes<HTMLParagraphElement>>(
-  ({ className, ...rest }, ref) => <p ref={ref} className={cn("text-muted-foreground text-sm", className)} {...rest} />,
+  ({ className, ...rest }, ref) => (
+    <p ref={ref} data-testid="card-description" className={cn("text-muted-foreground text-sm", className)} {...rest} />
+  ),
 );
 
 const CardContent = forwardRef<HTMLDivElement, HTMLAttributes<HTMLDivElement>>(({ className, ...rest }, ref) => (
-  <div ref={ref} className={cn("p-6 pt-0", className)} {...rest} />
+  <div ref={ref} data-testid="card-content" className={cn("p-6 pt-0", className)} {...rest} />
 ));
 
 const CardFooter = forwardRef<HTMLDivElement, HTMLAttributes<HTMLDivElement>>(({ className, ...rest }, ref) => (
-  <div ref={ref} className={cn("flex items-center p-6 pt-0", className)} {...rest} />
+  <div ref={ref} data-testid="card-footer" className={cn("flex items-center p-6 pt-0", className)} {...rest} />
 ));
 
 Card.displayName = "Card";

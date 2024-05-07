@@ -8,6 +8,7 @@ const Label = forwardRef<ElementRef<typeof LabelPrimitive.Root>, ComponentPropsW
   ({ className, ...rest }, ref) => (
     <LabelPrimitive.Root
       ref={ref}
+      data-testid="label"
       className={cn(
         "font-medium text-sm leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70",
         className,
