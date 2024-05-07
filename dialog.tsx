@@ -11,6 +11,7 @@ const DialogOverlay = forwardRef<
 >(({ className, ...rest }, ref) => (
   <DialogPrimitive.Overlay
     ref={ref}
+    data-testid="dialog-overlay"
     className={cn(
       "data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 fixed inset-0 z-50 bg-black/80 data-[state=closed]:animate-out data-[state=open]:animate-in",
       className,
@@ -26,6 +27,7 @@ const DialogContent = forwardRef<
   <DialogPortal>
     <DialogOverlay />
     <DialogPrimitive.Content
+      data-testid="dialog-content"
       ref={ref}
       className={cn(
         "data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:slide-out-to-top-[48%] data-[state=open]:slide-in-from-left-1/2 data-[state=open]:slide-in-from-top-[48%] fixed top-[50%] left-[50%] z-50 grid w-full max-w-lg translate-x-[-50%] translate-y-[-50%] gap-4 border bg-background p-6 shadow-lg duration-200 data-[state=closed]:animate-out data-[state=open]:animate-in sm:rounded-lg",
@@ -34,7 +36,10 @@ const DialogContent = forwardRef<
       {...rest}
     >
       {children}
-      <DialogPrimitive.Close className="absolute top-4 right-4 rounded-sm opacity-70 ring-offset-background transition-opacity disabled:pointer-events-none data-[state=open]:bg-accent data-[state=open]:text-muted-foreground hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2">
+      <DialogPrimitive.Close
+        role="button"
+        className="absolute top-4 right-4 rounded-sm opacity-70 ring-offset-background transition-opacity disabled:pointer-events-none data-[state=open]:bg-accent data-[state=open]:text-muted-foreground hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
+      >
         <XIcon className="size-4" />
         <span className="sr-only">Close</span>
       </DialogPrimitive.Close>
@@ -43,25 +48,43 @@ const DialogContent = forwardRef<
 ));
 
 const DialogHeader = ({ className, ...rest }: HTMLAttributes<HTMLDivElement>) => (
-  <div className={cn("flex flex-col space-y-1.5 text-center sm:text-left", className)} {...rest} />
+  <div
+    data-testid="dialog-header"
+    className={cn("flex flex-col space-y-1.5 text-center sm:text-left", className)}
+    {...rest}
+  />
 );
 
 const DialogFooter = ({ className, ...rest }: HTMLAttributes<HTMLDivElement>) => (
-  <div className={cn("flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2", className)} {...rest} />
+  <div
+    data-testid="dialog-footer"
+    className={cn("flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2", className)}
+    {...rest}
+  />
 );
 
 const DialogTitle = forwardRef<
   ElementRef<typeof DialogPrimitive.Title>,
   ComponentPropsWithoutRef<typeof DialogPrimitive.Title>
 >(({ className, ...rest }, ref) => (
-  <DialogPrimitive.Title ref={ref} className={cn("font-semibold text-lg leading-none", className)} {...rest} />
+  <DialogPrimitive.Title
+    data-testid="dialog-title"
+    ref={ref}
+    className={cn("font-semibold text-lg leading-none", className)}
+    {...rest}
+  />
 ));
 
 const DialogDescription = forwardRef<
   ElementRef<typeof DialogPrimitive.Description>,
   ComponentPropsWithoutRef<typeof DialogPrimitive.Description>
 >(({ className, ...rest }, ref) => (
-  <DialogPrimitive.Description ref={ref} className={cn("text-muted-foreground text-sm", className)} {...rest} />
+  <DialogPrimitive.Description
+    data-testid="dialog-description"
+    ref={ref}
+    className={cn("text-muted-foreground text-sm", className)}
+    {...rest}
+  />
 ));
 
 DialogOverlay.displayName = DialogPrimitive.Overlay.displayName;
