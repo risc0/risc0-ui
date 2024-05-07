@@ -1,4 +1,6 @@
-import { isEqual, isFunction, isNil } from "lodash-es";
+import isEqual from "lodash-es/isEqual";
+import isFunction from "lodash-es/isFunction";
+import isNil from "lodash-es/isNil";
 import { type Dispatch, type SetStateAction, useEffect, useRef, useState } from "react";
 import { parseJson } from "../utils/parse-json";
 import { useEventListener } from "./use-event-listener";
@@ -44,7 +46,7 @@ export const useLocalStorage = <T>(key: string, initialValue: T): [T, SetValue<T
 
     const value = readValueFromStorage<T>(key);
 
-    return isError(value) || isNil(value) || value === "" ? initialValue : value;
+    return isError(value) || isNil(value) || value === "" ? initialValue : (value as T);
   };
 
   // State to store our value
@@ -61,7 +63,7 @@ export const useLocalStorage = <T>(key: string, initialValue: T): [T, SetValue<T
 
     try {
       // Allow value to be a function so we have the same API as useState
-      const newValue = isFunction(value) ? value(storedValue) : value;
+      const newValue = isFunction(value) ? (value as (prevState: T) => T)(storedValue) : value;
 
       // Save to local storage
       window.localStorage.setItem(key, JSON.stringify(newValue));
