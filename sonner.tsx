@@ -1,7 +1,6 @@
 "use client";
 
 import { useTheme } from "next-themes";
-import type { ComponentProps } from "react";
 // @ts-ignore -- not sure why this is not working
 import { Toaster as Sonner } from "sonner";
 import { cn } from "./cn";
