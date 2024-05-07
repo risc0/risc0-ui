@@ -10,3 +10,7 @@ Building blocks for UI applications at RISC Zero.
 > #### General
 >
 > When making code changes, please have the [Biome VSCode extension](https://marketplace.visualstudio.com/items?itemName=biomejs.biome) installed.
+
+### Tests
+
+All test files named with the pattern `*.spec.*` are ran using `bun test` while all files named `*.test.*` are ran through `vitest`.

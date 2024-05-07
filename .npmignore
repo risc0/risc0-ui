@@ -7,3 +7,4 @@ components.json
 tsconfig.tsbuildinfo
 *.test.*
 *.spec.*
+vitest.config.ts
