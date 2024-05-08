@@ -1,6 +1,6 @@
 import { join, toLowerCase } from "string-ts";
 
-const DONT_FORMAT_THESE_WORDS = ["INSN", "ID", "RISC", "RTX", "NVIDIA", "CPU"];
+const DONT_FORMAT_THESE_WORDS = ["INSN", "OS", "CUDA", "ID", "RISC", "RTX", "NVIDIA", "CPU"];
 const DONT_FORMAT_THESE_WORDS_LOWERCASE = DONT_FORMAT_THESE_WORDS.map(toLowerCase);
 
 export function joinWords(str: string): string {

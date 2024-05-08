@@ -86,7 +86,7 @@
 
   /* regular link style */
   .link {
-    @apply text-primary hover:underline underline-offset-4
+    @apply text-muted-foreground dark:text-primary hover:underline underline-offset-4
   }
 }
 
