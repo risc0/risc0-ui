@@ -39,3 +39,4 @@ bun.lockb
 .DS_Store
 *.pem
 tsconfig.tsbuildinfo
+.zed

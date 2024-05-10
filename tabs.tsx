@@ -3,8 +3,11 @@
 import * as TabsPrimitive from "@radix-ui/react-tabs";
 import { type ComponentPropsWithoutRef, type ElementRef, forwardRef } from "react";
 import { cn } from "./cn";
+import "simplebar-react/dist/simplebar.min.css";
+import SimpleBar from "simplebar-react";
 
 const Tabs = TabsPrimitive.Root;
+const TabsOverflowWrapper = SimpleBar;
 
 const TabsList = forwardRef<ElementRef<typeof TabsPrimitive.List>, ComponentPropsWithoutRef<typeof TabsPrimitive.List>>(
   ({ className, ...rest }, ref) => (
@@ -52,4 +55,4 @@ TabsList.displayName = TabsPrimitive.List.displayName;
 TabsTrigger.displayName = TabsPrimitive.Trigger.displayName;
 TabsContent.displayName = TabsPrimitive.Content.displayName;
 
-export { Tabs, TabsList, TabsTrigger, TabsContent };
+export { Tabs, TabsList, TabsTrigger, TabsContent, TabsOverflowWrapper };
