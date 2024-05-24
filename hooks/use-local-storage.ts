@@ -1,9 +1,9 @@
-import isEqual from "lodash-es/isEqual";
-import isFunction from "lodash-es/isFunction";
-import isNil from "lodash-es/isNil";
+import { isEqual, isFunction } from "radash";
 import { type Dispatch, type SetStateAction, useEffect, useRef, useState } from "react";
 import { parseJson } from "../utils/parse-json";
 import { useEventListener } from "./use-event-listener";
+
+const isNil = (val) => val == null;
 
 type SetValue<T> = Dispatch<SetStateAction<T>>;
 
