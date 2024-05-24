@@ -1,11 +1,11 @@
 {
   "name": "@risc0/ui",
-  "version": "0.0.82",
+  "version": "0.0.83",
   "sideEffects": false,
   "type": "module",
   "scripts": {
     "bump:version": "bunx changelogen --bump --no-output",
-    "check": "tsc && bunx @biomejs/biome check . --apply-unsafe",
+    "check": "tsc && bunx @biomejs/biome check . --write --unsafe",
     "prepare": "npx husky",
     "sort-package": "bunx sort-package-json 'package.json'",
     "test": "vitest run --silent --coverage && istanbul-badges-readme"
