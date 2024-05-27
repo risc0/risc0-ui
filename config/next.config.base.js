@@ -2,12 +2,10 @@ import packageJson from "../package.json" assert { type: "json" };
 
 /** @type {import("next").NextConfig} */
 export const nextConfigBase = {
+  transpilePackages: ["@risc0/ui"],
   eslint: {
     ignoreDuringBuilds: true,
   },
-  swcMinify: true,
-  reactStrictMode: true,
-  transpilePackages: ["@risc0/ui"],
   publicRuntimeConfig: {
     version: packageJson.version,
   },
@@ -15,6 +13,17 @@ export const nextConfigBase = {
     caseSensitiveRoutes: true,
     staleTimes: {
       dynamic: 30,
+      static: 180,
+    },
+  },
+  images: {
+    dangerouslyAllowSVG: true,
+    contentDispositionType: "attachment",
+    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
+  },
+  logging: {
+    fetches: {
+      fullUrl: true,
     },
   },
 };
