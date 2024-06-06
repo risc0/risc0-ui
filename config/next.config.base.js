@@ -1,4 +1,5 @@
-import packageJson from "../package.json" assert { type: "json" };
+import { readFileSync } from "fs";
+const packageJson = JSON.parse(readFileSync("./package.json"));
 
 /** @type {import("next").NextConfig} */
 export const nextConfigBase = {
