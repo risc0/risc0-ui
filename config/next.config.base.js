@@ -10,13 +10,6 @@ export const nextConfigBase = {
   publicRuntimeConfig: {
     version: packageJson.version,
   },
-  experimental: {
-    caseSensitiveRoutes: true,
-    staleTimes: {
-      dynamic: 30,
-      static: 180,
-    },
-  },
   images: {
     dangerouslyAllowSVG: true,
     contentDispositionType: "attachment",
