@@ -1,6 +1,6 @@
 {
   "name": "@risc0/ui",
-  "version": "0.0.90",
+  "version": "0.0.91",
   "sideEffects": false,
   "type": "module",
   "scripts": {
@@ -36,17 +36,17 @@
     "radash": "12.1.0",
     "react-hook-form": "7.51.5",
     "simplebar-react": "3.2.5",
-    "sonner": "1.4.41",
+    "sonner": "1.5.0",
     "string-ts": "2.1.1",
     "tailwind-merge": "2.3.0",
     "tailwindcss": "3.4.4",
     "tailwindcss-animate": "1.0.7",
-    "typescript": "5.6.0-dev.20240605"
+    "typescript": "5.6.0-dev.20240608"
   },
   "devDependencies": {
     "@biomejs/biome": "1.8.0",
     "@testing-library/jest-dom": "6.4.5",
-    "@testing-library/react": "15.0.7",
+    "@testing-library/react": "16.0.0",
     "@testing-library/react-hooks": "8.0.1",
     "@types/jest": "29.5.12",
     "@vitejs/plugin-react-swc": "3.7.0",
