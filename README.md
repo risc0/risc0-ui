@@ -18,4 +18,4 @@ https://www.npmjs.com/package/@risc0/ui
 
 | Statements                  | Branches                | Functions                 | Lines             |
 | --------------------------- | ----------------------- | ------------------------- | ----------------- |
-| ![Statements](https://img.shields.io/badge/statements-48.16%25-red.svg?style=flat) | ![Branches](https://img.shields.io/badge/branches-75.8%25-red.svg?style=flat) | ![Functions](https://img.shields.io/badge/functions-56%25-red.svg?style=flat) | ![Lines](https://img.shields.io/badge/lines-48.16%25-red.svg?style=flat) |
+| ![Statements](https://img.shields.io/badge/statements-43.76%25-red.svg?style=flat) | ![Branches](https://img.shields.io/badge/branches-72.3%25-red.svg?style=flat) | ![Functions](https://img.shields.io/badge/functions-50%25-red.svg?style=flat) | ![Lines](https://img.shields.io/badge/lines-43.76%25-red.svg?style=flat) |
