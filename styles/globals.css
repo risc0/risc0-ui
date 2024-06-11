@@ -91,7 +91,7 @@
 }
 
 html {
-  /* prevent layout shifts when the scrollbar appears */
+  /* prevent layout shifts when the scrollbar appears, on both sides */
   scrollbar-gutter: stable both-edges;
 }
 
