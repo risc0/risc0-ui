@@ -92,7 +92,7 @@
 
 html {
   /* prevent layout shifts when the scrollbar appears */
-  scrollbar-gutter: both-edges;
+  scrollbar-gutter: stable both-edges;
 }
 
 body[style] {
