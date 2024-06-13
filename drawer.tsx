@@ -1,6 +1,5 @@
 "use client";
 
-import { cn } from "cn";
 import {
   type ComponentProps,
   type ComponentPropsWithoutRef,
@@ -9,6 +8,7 @@ import {
   forwardRef,
 } from "react";
 import { Drawer as DrawerPrimitive } from "vaul";
+import { cn } from "./cn";
 
 const DrawerTrigger = DrawerPrimitive.Trigger;
 const DrawerPortal = DrawerPrimitive.Portal;
