@@ -1,6 +1,6 @@
 {
   "name": "@risc0/ui",
-  "version": "0.0.97",
+  "version": "0.0.98",
   "sideEffects": false,
   "type": "module",
   "scripts": {
@@ -11,22 +11,22 @@
     "test": "vitest run --silent --coverage && istanbul-badges-readme"
   },
   "dependencies": {
-    "@radix-ui/react-avatar": "1.1.0-rc.5",
-    "@radix-ui/react-checkbox": "1.1.0-rc.5",
+    "@radix-ui/react-avatar": "1.1.0-rc.6",
+    "@radix-ui/react-checkbox": "1.1.0-rc.6",
     "@radix-ui/react-dialog": "1.0.5",
-    "@radix-ui/react-dropdown-menu": "2.1.0-rc.5",
-    "@radix-ui/react-label": "2.1.0-rc.5",
-    "@radix-ui/react-navigation-menu": "1.2.0-rc.5",
-    "@radix-ui/react-popover": "1.1.0-rc.5",
-    "@radix-ui/react-progress": "1.1.0-rc.5",
-    "@radix-ui/react-radio-group": "1.2.0-rc.5",
-    "@radix-ui/react-select": "2.1.0-rc.5",
-    "@radix-ui/react-separator": "1.1.0-rc.5",
-    "@radix-ui/react-slider": "1.2.0-rc.8",
-    "@radix-ui/react-slot": "1.1.0-rc.5",
-    "@radix-ui/react-switch": "1.1.0-rc.5",
-    "@radix-ui/react-tabs": "1.1.0-rc.5",
-    "@radix-ui/react-tooltip": "1.1.0-rc.5",
+    "@radix-ui/react-dropdown-menu": "2.1.0-rc.6",
+    "@radix-ui/react-label": "2.1.0-rc.6",
+    "@radix-ui/react-navigation-menu": "1.2.0-rc.6",
+    "@radix-ui/react-popover": "1.1.0-rc.6",
+    "@radix-ui/react-progress": "1.1.0-rc.6",
+    "@radix-ui/react-radio-group": "1.2.0-rc.6",
+    "@radix-ui/react-select": "2.1.0-rc.6",
+    "@radix-ui/react-separator": "1.1.0-rc.6",
+    "@radix-ui/react-slider": "1.2.0-rc.9",
+    "@radix-ui/react-slot": "1.1.0-rc.6",
+    "@radix-ui/react-switch": "1.1.0-rc.6",
+    "@radix-ui/react-tabs": "1.1.0-rc.6",
+    "@radix-ui/react-tooltip": "1.1.0-rc.6",
     "autoprefixer": "10.4.19",
     "class-variance-authority": "0.7.1-canary.2",
     "clsx": "2.1.1",
@@ -41,7 +41,7 @@
     "tailwind-merge": "2.3.0",
     "tailwindcss": "3.4.4",
     "tailwindcss-animate": "1.0.7",
-    "typescript": "5.6.0-dev.20240611",
+    "typescript": "5.6.0-dev.20240613",
     "vaul": "0.9.1"
   },
   "devDependencies": {
@@ -51,10 +51,10 @@
     "@testing-library/react-hooks": "8.0.1",
     "@types/jest": "29.5.12",
     "@vitejs/plugin-react-swc": "3.7.0",
-    "@vitest/coverage-v8": "2.0.0-beta.9",
+    "@vitest/coverage-v8": "2.0.0-beta.10",
     "happy-dom": "14.12.0",
     "istanbul-badges-readme": "1.9.0",
-    "vitest": "2.0.0-beta.9"
+    "vitest": "2.0.0-beta.10"
   },
   "peerDependencies": {
     "@types/react": "^18",
