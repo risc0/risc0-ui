@@ -26,7 +26,7 @@ const TableFooter = forwardRef<HTMLTableSectionElement, HTMLAttributes<HTMLTable
 const TableRow = forwardRef<HTMLTableRowElement, HTMLAttributes<HTMLTableRowElement>>(({ className, ...rest }, ref) => (
   <tr
     ref={ref}
-    className={cn("border-b transition-colors data-[state=selected]:bg-muted hover:bg-muted/50", className)}
+    className={cn("border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted", className)}
     {...rest}
   />
 ));
@@ -36,7 +36,7 @@ const TableHead = forwardRef<HTMLTableCellElement, ThHTMLAttributes<HTMLTableCel
     <th
       ref={ref}
       className={cn(
-        "h-10 px-2 text-left align-middle font-medium text-muted-foreground [&>[role=checkbox]]:translate-y-[2px] last:overflow-x-hidden [&:has([role=checkbox])]:pr-0",
+        "h-10 px-2 text-left align-middle font-medium text-muted-foreground last:overflow-x-hidden [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]",
         className,
       )}
       {...rest}
@@ -48,7 +48,7 @@ const TableCell = forwardRef<HTMLTableCellElement, TdHTMLAttributes<HTMLTableCel
   ({ className, ...rest }, ref) => (
     <td
       ref={ref}
-      className={cn("p-2 align-middle [&>[role=checkbox]]:translate-y-[2px] [&:has([role=checkbox])]:pr-0", className)}
+      className={cn("p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]", className)}
       {...rest}
     />
   ),
