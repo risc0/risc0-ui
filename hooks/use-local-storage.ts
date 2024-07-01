@@ -3,7 +3,7 @@ import { type Dispatch, type SetStateAction, useEffect, useRef, useState } from 
 import { parseJson } from "../utils/parse-json";
 import { useEventListener } from "./use-event-listener";
 
-const isNil = (val) => val == null;
+const isNil = (val: unknown) => val == null;
 
 type SetValue<T> = Dispatch<SetStateAction<T>>;
 
