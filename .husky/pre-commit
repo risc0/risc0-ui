@@ -1,6 +1,4 @@
 #!/bin/bash
 
-bun run check
-bun run test
-bun run bump:version
+bun run pre-commit
 git add .
