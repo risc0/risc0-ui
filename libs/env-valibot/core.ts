@@ -1,3 +1,4 @@
+/* c8 ignore start */
 /**
  * This is the core package of t3-env.
  * It contains the `createEnv` function that you can use to create your schema.

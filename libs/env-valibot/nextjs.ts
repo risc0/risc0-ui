@@ -1,3 +1,4 @@
+/* c8 ignore start */
 import { type CreateEnv, type ServerClientOptions, type StrictOptions, createEnv as createEnvCore } from "./core";
 import type { AnySchema } from "./utils";
 

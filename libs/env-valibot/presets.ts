@@ -1,3 +1,4 @@
+/* c8 ignore start */
 /**
  * This contains presets for common environment variables used
  * in 3rd party services so you don't have to write them yourself.
