@@ -5,7 +5,7 @@ import { useEventListener } from "./use-event-listener";
 
 const isNil = (val: unknown) => val == null;
 
-type SetValue<T> = Dispatch<SetStateAction<T>>;
+export type SetValue<T> = Dispatch<SetStateAction<T>>;
 
 /**
  * Creating and read here and using window.setItem for writes. This avoids
