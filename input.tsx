@@ -14,7 +14,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
       <input
         type={type}
         className={cn(
-          "peer flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-sm transition-colors file:border-0 file:bg-transparent file:font-medium file:text-sm placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50",
+          "peer flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-sm transition-colors file:border-0 file:bg-transparent file:font-medium file:text-sm placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-60",
           startIcon && "pl-9",
           endIcon && "pr-9",
           className,
@@ -25,14 +25,14 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
       {startIcon &&
         cloneElement(startIcon as ReactElement, {
           className: cn(
-            "absolute top-2.5 left-3 size-4 text-muted-foreground peer-focus-visible:text-primary peer-disabled:text-muted",
+            "absolute top-2.5 left-3 size-4 text-muted-foreground peer-focus-visible:text-primary peer-disabled:opacity-60",
             startIcon.props.className,
           ),
         })}
       {endIcon &&
         cloneElement(endIcon as ReactElement, {
           className: cn(
-            "absolute top-2.5 right-3 size-4 text-muted-foreground peer-focus-visible:text-primary peer-disabled:text-muted",
+            "absolute top-2.5 right-3 size-4 text-muted-foreground peer-focus-visible:text-primary peer-disabled:opacity-60",
             endIcon.props.className,
           ),
         })}

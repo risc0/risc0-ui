@@ -1,6 +1,6 @@
 {
   "name": "@risc0/ui",
-  "version": "0.0.121",
+  "version": "0.0.122",
   "private": false,
   "sideEffects": false,
   "type": "module",
@@ -42,9 +42,9 @@
     "sonner": "1.5.0",
     "string-ts": "2.2.0",
     "tailwind-merge": "2.4.0",
-    "tailwindcss": "3.4.4",
+    "tailwindcss": "3.4.6",
     "tailwindcss-animate": "1.0.7",
-    "typescript": "5.6.0-dev.20240715",
+    "typescript": "5.6.0-dev.20240716",
     "vaul": "0.9.1"
   },
   "devDependencies": {
