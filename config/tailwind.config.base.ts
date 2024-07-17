@@ -93,6 +93,11 @@ const config = {
           from: { opacity: "0" },
           to: { opacity: "1" },
         },
+        tilt: {
+          "0%, 50%, to": { transform: "rotate(0deg)" },
+          "25%": { transform: "rotate(0.5deg)" },
+          "75%": { transform: "rotate(-0.5deg)" },
+        },
         "head-shake": {
           "0%": { transform: "translateX(0)" },
           "6.5%": { transform: "translateX(-6px) rotateY(-9deg)" },
@@ -111,6 +116,7 @@ const config = {
         "head-shake": "head-shake 1s ease-in-out",
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        tilt: "tilt 10s linear infinite",
       },
     },
   },
