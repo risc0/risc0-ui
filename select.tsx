@@ -108,7 +108,7 @@ const SelectLabel = forwardRef<
   ElementRef<typeof SelectPrimitive.Label>,
   ComponentPropsWithoutRef<typeof SelectPrimitive.Label>
 >(({ className, ...rest }, ref) => (
-  <SelectPrimitive.Label ref={ref} className={cn("px-2 py-1.5 font-semibold text-sm", className)} {...rest} />
+  <SelectPrimitive.Label ref={ref} className={cn("px-2 py-1.5 font-bold text-sm", className)} {...rest} />
 ));
 
 const SelectItem = forwardRef<

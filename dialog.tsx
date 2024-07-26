@@ -70,7 +70,7 @@ const DialogTitle = forwardRef<
   <DialogPrimitive.Title
     data-testid="dialog-title"
     ref={ref}
-    className={cn("font-semibold text-lg leading-none", className)}
+    className={cn("font-bold text-lg leading-none", className)}
     {...rest}
   />
 ));

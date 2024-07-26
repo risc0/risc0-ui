@@ -19,7 +19,7 @@ const TableBody = forwardRef<HTMLTableSectionElement, HTMLAttributes<HTMLTableSe
 
 const TableFooter = forwardRef<HTMLTableSectionElement, HTMLAttributes<HTMLTableSectionElement>>(
   ({ className, ...rest }, ref) => (
-    <tfoot ref={ref} className={cn("border-t bg-muted/50 font-medium [&>tr]:last:border-b-0", className)} {...rest} />
+    <tfoot ref={ref} className={cn("border-t bg-muted/50 [&>tr]:last:border-b-0", className)} {...rest} />
   ),
 );
 
@@ -36,7 +36,7 @@ const TableHead = forwardRef<HTMLTableCellElement, ThHTMLAttributes<HTMLTableCel
     <th
       ref={ref}
       className={cn(
-        "h-10 px-2 text-left align-middle font-medium text-muted-foreground last:overflow-x-hidden [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]",
+        "h-10 px-2 text-left align-middle font-bold text-muted-foreground last:overflow-x-hidden [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]",
         className,
       )}
       {...rest}

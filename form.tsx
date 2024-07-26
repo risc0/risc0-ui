@@ -133,7 +133,7 @@ const FormMessage = forwardRef<HTMLParagraphElement, HTMLAttributes<HTMLParagrap
       <p
         ref={ref}
         id={formMessageId}
-        className={cn("animate-head-shake font-medium text-destructive text-xs", className)}
+        className={cn("animate-head-shake text-destructive text-xs", className)}
         {...rest}
       >
         {body}

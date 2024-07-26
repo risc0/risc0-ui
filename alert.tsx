@@ -3,12 +3,12 @@ import { type HTMLAttributes, forwardRef } from "react";
 import { cn } from "./cn";
 
 const alertVariants = cva(
-  "relative w-full rounded-lg border px-4 py-3 text-sm [&>svg+div]:translate-y-[-3px] [&>svg]:absolute [&>svg]:left-4 [&>svg]:text-foreground [&>svg~*]:pl-7",
+  "relative w-full rounded-lg border bg-background px-4 py-3 text-foreground text-sm [&>svg+div]:translate-y-[-3px] [&>svg]:absolute [&>svg]:left-4 [&>svg]:text-foreground [&>svg~*]:pl-7",
   {
     variants: {
       variant: {
-        default: "bg-background text-foreground",
-        destructive: "border-destructive/50 text-destructive dark:border-destructive [&>svg]:text-destructive",
+        default: "",
+        destructive: "border-destructive/50 dark:border-destructive [&>svg]:text-destructive",
       },
     },
     defaultVariants: {
@@ -24,9 +24,7 @@ const Alert = forwardRef<HTMLDivElement, HTMLAttributes<HTMLDivElement> & Varian
 );
 
 const AlertTitle = forwardRef<HTMLParagraphElement, HTMLAttributes<HTMLHeadingElement>>(
-  ({ className, ...rest }, ref) => (
-    <h3 ref={ref} className={cn("mb-1 font-medium leading-none", className)} {...rest} />
-  ),
+  ({ className, ...rest }, ref) => <h3 ref={ref} className={cn("mb-1 font-bold leading-none", className)} {...rest} />,
 );
 
 const AlertDescription = forwardRef<HTMLParagraphElement, HTMLAttributes<HTMLParagraphElement>>(

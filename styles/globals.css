@@ -81,17 +81,17 @@
 
   /* usually h2 */
   .title-sm {
-    @apply text-2xl font-semibold;
+    @apply text-2xl font-bold;
   }
 
   /* usually h3 */
   .subtitle {
-    @apply text-xl font-semibold;
+    @apply text-xl font-bold;
   }
 
   /* usually h4 */
   .subtitle-sm {
-    @apply text-lg font-medium;
+    @apply text-lg;
   }
 
   /* Don't use h5/h6 */

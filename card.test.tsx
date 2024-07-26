@@ -39,14 +39,14 @@ describe("CardTitle", () => {
   test("applies correct classes", () => {
     render(<CardTitle />);
     const cardTitleElement = screen.getByRole("heading");
-    expect(cardTitleElement).toHaveClass("font-semibold leading-none");
+    expect(cardTitleElement).toHaveClass("font-bold leading-none");
   });
 
   test("correctly applies additional classes", () => {
     const additionalClass = "additional-class";
     render(<CardTitle className={additionalClass} />);
     const cardTitleElement = screen.getByRole("heading");
-    expect(cardTitleElement).toHaveClass("font-semibold leading-none", additionalClass);
+    expect(cardTitleElement).toHaveClass("font-bold leading-none", additionalClass);
   });
 
   test("correctly applies additional props", () => {

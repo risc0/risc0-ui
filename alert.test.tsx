@@ -5,15 +5,13 @@ describe("Alert", () => {
   test("returns default class names when no variant is provided", () => {
     render(<Alert />);
     const alertElement = screen.getByRole("alert");
-    expect(alertElement.className).toContain("relative w-full rounded-lg border px-4 py-3 text-sm");
-    expect(alertElement.className).toContain("bg-background text-foreground");
+    expect(alertElement.className).toContain("relative w-full rounded-lg border bg-background px-4 py-3 text-foreground text-sm [&>svg+div]:translate-y-[-3px] [&>svg]:absolute [&>svg]:left-4 [&>svg]:text-foreground [&>svg~*]:pl-7");
   });
 
   test("returns correct class names when destructive variant is provided", () => {
     render(<Alert variant="destructive" />);
     const alertElement = screen.getByRole("alert");
-    expect(alertElement.className).toContain("relative w-full rounded-lg border px-4 py-3 text-sm");
-    expect(alertElement.className).toContain("border-destructive/50 text-destructive dark:border-destructive");
+    expect(alertElement.className).toContain("relative w-full rounded-lg border bg-background px-4 py-3 text-foreground text-sm [&>svg+div]:translate-y-[-3px] [&>svg]:absolute [&>svg]:left-4 [&>svg~*]:pl-7 border-destructive/50 dark:border-destructive [&>svg]:text-destructive");
   });
 });
 
@@ -27,7 +25,7 @@ describe("AlertTitle", () => {
   test("has correct default class names", () => {
     render(<AlertTitle>Test Title</AlertTitle>);
     const titleElement = screen.getByText("Test Title");
-    expect(titleElement.className).toContain("mb-1 font-medium leading-none");
+    expect(titleElement.className).toContain("mb-1 font-bold leading-none");
   });
 
   test("properly forwards classnames", () => {

@@ -49,7 +49,7 @@ const BreadcrumbPage = forwardRef<HTMLLIElement, ComponentPropsWithoutRef<"li">>
       role="link"
       aria-disabled="true"
       aria-current="page"
-      className={cn("font-normal text-foreground", className)}
+      className={cn("text-foreground", className)}
       {...props}
     />
   </li>
