@@ -1,6 +1,6 @@
 {
   "name": "@risc0/ui",
-  "version": "0.0.133",
+  "version": "0.0.134",
   "private": false,
   "sideEffects": false,
   "type": "module",
@@ -35,7 +35,7 @@
     "class-variance-authority": "0.7.1-canary.2",
     "clsx": "2.1.1",
     "cmdk": "1.0.0",
-    "lucide-react": "0.416.0",
+    "lucide-react": "0.417.0",
     "next-themes": "0.3.0",
     "radash": "12.1.0",
     "react-hook-form": "7.52.1",
@@ -46,11 +46,11 @@
     "tailwind-merge": "2.4.0",
     "tailwindcss": "3.4.7",
     "tailwindcss-animate": "1.0.7",
-    "typescript": "5.6.0-dev.20240726",
+    "typescript": "5.6.0-dev.20240729",
     "vaul": "0.9.1"
   },
   "devDependencies": {
-    "@biomejs/biome": "1.8.3",
+    "@biomejs/biome": "1.8.4-nightly.a579bf7",
     "@testing-library/jest-dom": "6.4.8",
     "@testing-library/react": "16.0.0",
     "@testing-library/react-hooks": "8.0.1",
