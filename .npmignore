@@ -8,9 +8,10 @@ tsconfig.tsbuildinfo
 *.test.*
 *.spec.*
 vitest.config.ts
-setupTests.ts
+setup-tests.ts
 coverage
 .ladle
 tailwind.config.ts
 postcss.config.cjs
 stories
+tsconfig.json
