@@ -1,0 +1,41 @@
+@font-face {
+  /* includes font-weights from 600-900 */
+  font-family: "Europa";
+  src: url("/fonts/EuropaGroteskSH-Med.otf");
+  font-weight: 600 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  /* includes font-weights from 400-500 */
+  font-family: "Europa";
+  src: url("/fonts/EuropaGroteskSH-Reg.otf");
+  font-weight: 400 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  /* includes font-weights from 100-300 */
+  font-family: "Europa";
+  src: url("/fonts/EuropaGroteskSH-Lig.otf");
+  font-weight: 100 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  /* define custom css var for the Europa font */
+  --font-europa-sans: "Europa", sans-serif;
+}
+
+* {
+  /* apply letter-spacing to all html elements */
+  @apply tracking-wider;
+}
+
+.font-mono {
+  /* reset the `tracking-wider` on the monospace font */
+  letter-spacing: initial;
+}

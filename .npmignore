@@ -10,3 +10,7 @@ tsconfig.tsbuildinfo
 vitest.config.ts
 setupTests.ts
 coverage
+.ladle
+tailwind.config.ts
+postcss.config.cjs
+stories
