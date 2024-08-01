@@ -61,10 +61,10 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         <Loader2Icon
           data-testid="loader-icon"
           className={cn(
-            iconVariants({}),
             "animate-spin",
             !startIcon && "transition-all",
             isLoading ? "mr-2 max-w-4 opacity-100" : "mr-0 max-w-0 opacity-0",
+            iconVariants({ size }),
           )}
         />
         {!isLoading &&

@@ -1,17 +1,26 @@
-node_modules
+# misc
 .github
-.husky
 .gitignore
-biome.jsonc
-components.json
+.husky
+node_modules
+
+# typescript
+tsconfig.json
 tsconfig.tsbuildinfo
+
+# tests
 *.test.*
 *.spec.*
-vitest.config.ts
-setup-tests.ts
 coverage
+setup-tests.ts
+vitest.config.ts
+
+# stories
 .ladle
-tailwind.config.ts
-postcss.config.cjs
 stories
-tsconfig.json
+
+# config files only for risc0-ui
+biome.jsonc
+components.json
+postcss.config.cjs
+tailwind.config.ts

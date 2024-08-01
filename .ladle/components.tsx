@@ -13,7 +13,7 @@ export const Provider: GlobalProvider = ({ children, globalState }) => {
   }, [globalState.theme, setTheme]);
 
   return (
-    <div className="container bg-background font-sans" style={{ maxWidth: 800 }}>
+    <div className="container" style={{ maxWidth: 800 }}>
       <ThemeProvider
         attribute="class"
         defaultTheme="light"
