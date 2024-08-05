@@ -33,9 +33,9 @@ const buttonVariants = cva(
 const iconVariants = cva(undefined, {
   variants: {
     size: {
-      default: "size-4",
-      sm: "size-3",
-      lg: "size-5",
+      default: "size-4 max-w-4",
+      sm: "size-3 max-w-3",
+      lg: "size-5 max-w-5",
       icon: "mr-0 size-4",
       "icon-sm": "mr-0 size-3",
     },
@@ -63,8 +63,9 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
           className={cn(
             "animate-spin",
             !startIcon && "transition-all",
-            isLoading ? "mr-2 max-w-4 opacity-100" : "mr-0 max-w-0 opacity-0",
+            isLoading && "mr-2 opacity-100",
             iconVariants({ size }),
+            !isLoading && "mr-0 max-w-0 opacity-0",
           )}
         />
         {!isLoading &&
