@@ -1,5 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import { createRef } from "react";
+import { describe, expect, it } from "vitest";
 import {
   Breadcrumb,
   BreadcrumbEllipsis,
@@ -11,13 +12,13 @@ import {
 } from "./breadcrumb";
 
 describe("Breadcrumb", () => {
-  test("renders without crashing", () => {
+  it("renders without crashing", () => {
     render(<Breadcrumb />);
     const breadcrumbElement = screen.getByRole("navigation");
     expect(breadcrumbElement).toBeInTheDocument();
   });
 
-  test("forwards ref correctly", () => {
+  it("forwards ref correctly", () => {
     const ref = createRef<HTMLElement>();
     render(<Breadcrumb ref={ref} />);
     expect(ref.current).not.toBeNull();
@@ -25,13 +26,13 @@ describe("Breadcrumb", () => {
 });
 
 describe("BreadcrumbList", () => {
-  test("renders without crashing", () => {
+  it("renders without crashing", () => {
     render(<BreadcrumbList />);
     const breadcrumbListElement = screen.getByRole("list");
     expect(breadcrumbListElement).toBeInTheDocument();
   });
 
-  test("forwards ref correctly", () => {
+  it("forwards ref correctly", () => {
     const ref = createRef<HTMLOListElement>();
     render(<BreadcrumbList ref={ref} />);
     expect(ref.current).not.toBeNull();
@@ -39,13 +40,13 @@ describe("BreadcrumbList", () => {
 });
 
 describe("BreadcrumbItem", () => {
-  test("renders without crashing", () => {
+  it("renders without crashing", () => {
     render(<BreadcrumbItem />);
     const breadcrumbItemElement = screen.getByRole("listitem");
     expect(breadcrumbItemElement).toBeInTheDocument();
   });
 
-  test("forwards ref correctly", () => {
+  it("forwards ref correctly", () => {
     const ref = createRef<HTMLLIElement>();
     render(<BreadcrumbItem ref={ref} />);
     expect(ref.current).not.toBeNull();
@@ -53,13 +54,13 @@ describe("BreadcrumbItem", () => {
 });
 
 describe("BreadcrumbLink", () => {
-  test("renders without crashing", () => {
+  it("renders without crashing", () => {
     render(<BreadcrumbLink />);
     const breadcrumbLinkElement = screen.getByTestId("breadcrumb-link");
     expect(breadcrumbLinkElement).toBeInTheDocument();
   });
 
-  test("forwards ref correctly", () => {
+  it("forwards ref correctly", () => {
     const ref = createRef<HTMLAnchorElement>();
     render(<BreadcrumbLink ref={ref} />);
     expect(ref.current).not.toBeNull();
@@ -67,13 +68,13 @@ describe("BreadcrumbLink", () => {
 });
 
 describe("BreadcrumbPage", () => {
-  test("renders without crashing", () => {
+  it("renders without crashing", () => {
     render(<BreadcrumbPage />);
     const breadcrumbPageElement = screen.getByRole("link");
     expect(breadcrumbPageElement).toBeInTheDocument();
   });
 
-  test("forwards ref correctly", () => {
+  it("forwards ref correctly", () => {
     const ref = createRef<HTMLLIElement>();
     render(<BreadcrumbPage ref={ref} />);
     expect(ref.current).not.toBeNull();
@@ -81,7 +82,7 @@ describe("BreadcrumbPage", () => {
 });
 
 describe("BreadcrumbSeparator", () => {
-  test("renders without crashing", () => {
+  it("renders without crashing", () => {
     render(<BreadcrumbSeparator />);
     const breadcrumbSeparatorElement = screen.getByRole("presentation", {
       hidden: true,
@@ -91,7 +92,7 @@ describe("BreadcrumbSeparator", () => {
 });
 
 describe("BreadcrumbEllipsis", () => {
-  test("renders without crashing", () => {
+  it("renders without crashing", () => {
     render(<BreadcrumbEllipsis />);
     const breadcrumbEllipsisElement = screen.getByRole("presentation", { hidden: true });
     expect(breadcrumbEllipsisElement).toBeInTheDocument();

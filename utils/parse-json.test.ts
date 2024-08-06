@@ -1,3 +1,4 @@
+import { describe, expect, it } from "vitest";
 import { parseJson } from "./parse-json";
 
 describe("parseJson", () => {

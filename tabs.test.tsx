@@ -1,9 +1,10 @@
 import { render, screen } from "@testing-library/react";
 import { createRef } from "react";
+import { describe, expect, it } from "vitest";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "./tabs";
 
 describe("TabsList", () => {
-  test("renders without crashing", () => {
+  it("renders without crashing", () => {
     render(
       <Tabs>
         <TabsList />
@@ -13,7 +14,7 @@ describe("TabsList", () => {
     expect(tabsListElement).toBeInTheDocument();
   });
 
-  test("forwards ref correctly", () => {
+  it("forwards ref correctly", () => {
     const ref = createRef<HTMLDivElement>();
     render(
       <Tabs>
@@ -25,7 +26,7 @@ describe("TabsList", () => {
 });
 
 describe("TabsTrigger", () => {
-  test("renders without crashing", () => {
+  it("renders without crashing", () => {
     render(
       <Tabs>
         <TabsList>
@@ -37,7 +38,7 @@ describe("TabsTrigger", () => {
     expect(tabsTriggerElement).toBeInTheDocument();
   });
 
-  test("forwards ref correctly", () => {
+  it("forwards ref correctly", () => {
     const ref = createRef<HTMLButtonElement>();
     render(
       <Tabs>
@@ -53,7 +54,7 @@ describe("TabsTrigger", () => {
 });
 
 describe("TabsContent", () => {
-  test("renders without crashing", () => {
+  it("renders without crashing", () => {
     render(
       <Tabs>
         <TabsContent value={""} />
@@ -63,7 +64,7 @@ describe("TabsContent", () => {
     expect(tabsContentElement).toBeInTheDocument();
   });
 
-  test("forwards ref correctly", () => {
+  it("forwards ref correctly", () => {
     const ref = createRef<HTMLDivElement>();
     render(
       <Tabs>

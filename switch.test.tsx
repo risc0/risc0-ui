@@ -1,21 +1,22 @@
 import { render, screen } from "@testing-library/react";
 import { createRef } from "react";
+import { describe, expect, it } from "vitest";
 import { Switch } from "./switch";
 
 describe("Switch", () => {
-  test("renders without crashing", () => {
+  it("renders without crashing", () => {
     render(<Switch />);
     const switchElement = screen.getByRole("switch");
     expect(switchElement).toBeInTheDocument();
   });
 
-  test("forwards ref correctly", () => {
+  it("forwards ref correctly", () => {
     const ref = createRef<HTMLButtonElement>();
     render(<Switch ref={ref} />);
     expect(ref.current).not.toBeNull();
   });
 
-  test("applies correct class names based on state", () => {
+  it("applies correct class names based on state", () => {
     render(<Switch />);
     const switchElement = screen.getByRole("switch");
     expect(switchElement).toHaveClass(

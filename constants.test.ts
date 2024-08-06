@@ -1,3 +1,4 @@
+import { describe, expect, it } from "vitest";
 import { RISC0_PRIVACY_POLICY_URL, RISC0_TERMS_OF_SERVICE_URL } from "./constants";
 
 describe("Constants", () => {
