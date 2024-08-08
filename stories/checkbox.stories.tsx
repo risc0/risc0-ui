@@ -1,3 +1,4 @@
+/* c8 ignore start */
 import { Checkbox } from "checkbox";
 
 export const Default = () => {

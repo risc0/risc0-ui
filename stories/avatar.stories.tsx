@@ -1,3 +1,4 @@
+/* c8 ignore start */
 import { Avatar, AvatarFallback, AvatarImage } from "avatar";
 
 export const Default = () => (

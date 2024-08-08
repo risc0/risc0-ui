@@ -1,3 +1,4 @@
+/* c8 ignore start */
 import deepmerge from "deepmerge";
 import type { Config } from "tailwindcss";
 import tailwindConfig from "./config/tailwind.config.base";

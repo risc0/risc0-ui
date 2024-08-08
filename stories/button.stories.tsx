@@ -1,3 +1,4 @@
+/* c8 ignore start */
 import { Button, type ButtonProps } from "button";
 import { Label } from "label";
 import { RocketIcon } from "lucide-react";

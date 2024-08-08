@@ -1,3 +1,4 @@
+/* c8 ignore start */
 import { Separator } from "separator";
 
 export const Default = () => {

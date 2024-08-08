@@ -1,3 +1,4 @@
+/* c8 ignore start */
 import { Alert, AlertDescription, AlertTitle } from "alert";
 import { RocketIcon } from "lucide-react";
 

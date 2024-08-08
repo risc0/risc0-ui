@@ -1,3 +1,4 @@
+/* c8 ignore start */
 import { Slider } from "slider";
 
 export const Default = () => {
