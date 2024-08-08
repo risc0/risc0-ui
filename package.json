@@ -1,6 +1,6 @@
 {
   "name": "@risc0/ui",
-  "version": "0.0.146",
+  "version": "0.0.147",
   "private": false,
   "sideEffects": false,
   "type": "module",
@@ -36,8 +36,8 @@
     "class-variance-authority": "0.7.1-canary.2",
     "clsx": "2.1.1",
     "cmdk": "1.0.0",
-    "lucide-react": "0.424.0",
-    "next": "15.0.0-canary.103",
+    "lucide-react": "0.426.0",
+    "next": "15.0.0-canary.108",
     "next-themes": "0.3.0",
     "radash": "12.1.0",
     "react-hook-form": "7.52.2",
@@ -46,9 +46,9 @@
     "sonner": "1.5.0",
     "string-ts": "2.2.0",
     "tailwind-merge": "2.4.0",
-    "tailwindcss": "3.4.7",
+    "tailwindcss": "3.4.9",
     "tailwindcss-animate": "1.0.7",
-    "typescript": "5.6.0-dev.20240806",
+    "typescript": "5.6.0-dev.20240808",
     "vaul": "0.9.1"
   },
   "devDependencies": {
