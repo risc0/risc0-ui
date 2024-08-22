@@ -1,6 +1,6 @@
 {
   "name": "@risc0/ui",
-  "version": "0.0.156",
+  "version": "0.0.157",
   "private": false,
   "sideEffects": false,
   "type": "module",
@@ -15,20 +15,19 @@
     "story": "ladle serve"
   },
   "dependencies": {
-    "@radix-ui/react-alert-dialog": "^1.1.1",
     "@radix-ui/react-avatar": "1.1.0",
     "@radix-ui/react-checkbox": "1.1.1",
     "@radix-ui/react-dialog": "1.0.5",
     "@radix-ui/react-dropdown-menu": "2.1.1",
     "@radix-ui/react-label": "2.1.0",
-    "@radix-ui/react-navigation-menu": "^1.2.0",
+    "@radix-ui/react-navigation-menu": "1.2.0",
     "@radix-ui/react-popover": "1.1.1",
     "@radix-ui/react-progress": "1.1.0",
     "@radix-ui/react-radio-group": "1.2.0",
     "@radix-ui/react-select": "2.1.1",
     "@radix-ui/react-separator": "1.1.0",
     "@radix-ui/react-slider": "1.2.0",
-    "@radix-ui/react-slot": "^1.1.0",
+    "@radix-ui/react-slot": "1.1.0",
     "@radix-ui/react-switch": "1.1.0",
     "@radix-ui/react-tabs": "1.1.0",
     "@radix-ui/react-tooltip": "1.1.2",
@@ -36,7 +35,7 @@
     "class-variance-authority": "0.7.1-canary.2",
     "clsx": "2.1.1",
     "cmdk": "1.0.0",
-    "lucide-react": "0.428.0",
+    "lucide-react": "0.429.0",
     "next": "15.0.0-canary.120",
     "next-themes": "0.3.0",
     "radash": "12.1.0",
@@ -48,7 +47,7 @@
     "tailwind-merge": "2.5.2",
     "tailwindcss": "3.4.10",
     "tailwindcss-animate": "1.0.7",
-    "typescript": "5.6.0-dev.20240819",
+    "typescript": "5.7.0-dev.20240822",
     "vaul": "0.9.1"
   },
   "devDependencies": {
@@ -61,7 +60,7 @@
     "@vitejs/plugin-react-swc": "3.7.0",
     "@vitest/coverage-v8": "2.0.5",
     "deepmerge": "4.3.1",
-    "happy-dom": "14.12.3",
+    "happy-dom": "15.0.0",
     "istanbul-badges-readme": "1.9.0",
     "npm-run-all": "4.1.5"
   },
