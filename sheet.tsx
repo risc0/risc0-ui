@@ -50,22 +50,25 @@ interface SheetContentProps
   extends ComponentPropsWithoutRef<typeof SheetPrimitive.Content>,
     VariantProps<typeof sheetVariants> {}
 
-const SheetContent = forwardRef<ElementRef<typeof SheetPrimitive.Content>, SheetContentProps>(
-  ({ side = "right", className, children, ...props }, ref) => {
-    return (
-      <SheetPortal>
-        <SheetOverlay />
-        <SheetPrimitive.Content ref={ref} className={cn(sheetVariants({ side }), className)} {...props}>
-          <SheetPrimitive.Close className="absolute top-4 right-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-secondary">
-            <XIcon className="size-4" />
-            <span className="sr-only">Close</span>
-          </SheetPrimitive.Close>
-          {children}
-        </SheetPrimitive.Content>
-      </SheetPortal>
-    );
-  },
-);
+const SheetContent = forwardRef<
+  ElementRef<typeof SheetPrimitive.Content>,
+  SheetContentProps & {
+    sheetOverlayClassName?: string;
+  }
+>(({ side = "right", className, sheetOverlayClassName, children, ...props }, ref) => {
+  return (
+    <SheetPortal>
+      <SheetOverlay className={sheetOverlayClassName} />
+      <SheetPrimitive.Content ref={ref} className={cn(sheetVariants({ side }), className)} {...props}>
+        <SheetPrimitive.Close className="absolute top-4 right-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-secondary">
+          <XIcon className="size-4" />
+          <span className="sr-only">Close</span>
+        </SheetPrimitive.Close>
+        {children}
+      </SheetPrimitive.Content>
+    </SheetPortal>
+  );
+});
 
 const SheetHeader = ({ className, ...props }: HTMLAttributes<HTMLDivElement>) => {
   return <div className={cn("flex flex-col space-y-2 text-center sm:text-left", className)} {...props} />;
