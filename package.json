@@ -1,6 +1,6 @@
 {
   "name": "@risc0/ui",
-  "version": "0.0.166",
+  "version": "0.0.167",
   "private": false,
   "sideEffects": false,
   "type": "module",
@@ -36,7 +36,6 @@
     "clsx": "2.1.1",
     "cmdk": "1.0.0",
     "lucide-react": "0.441.0",
-    "next": "15.0.0-canary.152",
     "next-themes": "0.3.0",
     "radash": "12.1.0",
     "react-hook-form": "7.52.2",
