@@ -1,5 +1,5 @@
 {
-  "$schema": "https://biomejs.dev/schemas/1.9.0/schema.json",
+  "$schema": "https://biomejs.dev/schemas/1.9.2/schema.json",
   "files": {
     "ignore": [".next", ".vercel", "build", "dist", "node_modules"],
     "ignoreUnknown": true

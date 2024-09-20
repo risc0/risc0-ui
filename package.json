@@ -1,6 +1,6 @@
 {
   "name": "@risc0/ui",
-  "version": "0.0.169",
+  "version": "0.0.170",
   "private": false,
   "sideEffects": false,
   "type": "module",
@@ -50,7 +50,7 @@
     "vaul": "0.9.4"
   },
   "devDependencies": {
-    "@biomejs/biome": "1.9.1",
+    "@biomejs/biome": "1.9.2",
     "@ladle/react": "4.1.1",
     "@testing-library/jest-dom": "6.5.0",
     "@testing-library/react": "16.0.1",
