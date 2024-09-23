@@ -1,180 +1,46 @@
-/* c8 ignore start */
-import { Button, type ButtonProps } from "button";
-import { Label } from "label";
 import { RocketIcon } from "lucide-react";
-import { RadioGroup, RadioGroupItem } from "radio-group";
-import { useState } from "react";
+/* c8 ignore start */
+import { Button } from "../button";
 
-export const All = () => {
-  const [variant, setVariant] = useState<ButtonProps["variant"]>("default");
+export function Default() {
+  return <Button>Default Button</Button>;
+}
 
+export function Variants() {
   return (
-    <>
-      <RadioGroup
-        // @ts-expect-error
-        onValueChange={setVariant}
-        defaultValue="default"
-        className="mb-8 flex flex-row gap-8"
-      >
-        <div className="flex items-center space-x-2">
-          <RadioGroupItem value="default" id="r1" />
-          <Label htmlFor="r1">Default</Label>
-        </div>
-        <div className="flex items-center space-x-2">
-          <RadioGroupItem value="secondary" id="r2" />
-          <Label htmlFor="r2">Secondary</Label>
-        </div>
-        <div className="flex items-center space-x-2">
-          <RadioGroupItem value="destructive" id="r3" />
-          <Label htmlFor="r3">Destructive</Label>
-        </div>
-        <div className="flex items-center space-x-2">
-          <RadioGroupItem value="outline" id="r4" />
-          <Label htmlFor="r4">Outline</Label>
-        </div>
-        <div className="flex items-center space-x-2">
-          <RadioGroupItem value="ghost" id="r5" />
-          <Label htmlFor="r5">Ghost</Label>
-        </div>
-      </RadioGroup>
-
-      <div className="flex flex-col items-start gap-8">
-        <div className="flex flex-row gap-5">
-          <Button variant={variant} size="sm">
-            Small
-          </Button>
-
-          <Button startIcon={<RocketIcon />} variant={variant} size="sm">
-            With Start Icon
-          </Button>
-
-          <Button endIcon={<RocketIcon />} variant={variant} size="sm">
-            With End Icon
-          </Button>
-
-          <Button variant={variant} size="sm" isLoading>
-            Loading
-          </Button>
-
-          <Button variant={variant} size="sm" disabled>
-            Disabled
-          </Button>
-
-          <Button variant={variant} isLoading size="sm" disabled>
-            Disabled Loading
-          </Button>
-        </div>
-
-        <div className="flex flex-row gap-5">
-          <Button variant={variant} size="default">
-            Medium
-          </Button>
-
-          <Button startIcon={<RocketIcon />} variant={variant} size="default">
-            With Start Icon
-          </Button>
-
-          <Button endIcon={<RocketIcon />} variant={variant} size="default">
-            With End Icon
-          </Button>
-
-          <Button variant={variant} size="default" isLoading>
-            Loading
-          </Button>
-
-          <Button variant={variant} size="default" disabled>
-            Disabled
-          </Button>
-
-          <Button variant={variant} isLoading size="default" disabled>
-            Disabled Loading
-          </Button>
-        </div>
-
-        <div className="flex flex-row gap-5">
-          <Button variant={variant} size="lg">
-            Large
-          </Button>
-
-          <Button startIcon={<RocketIcon />} variant={variant} size="lg">
-            With Start Icon
-          </Button>
-
-          <Button endIcon={<RocketIcon />} variant={variant} size="lg">
-            With End Icon
-          </Button>
-
-          <Button variant={variant} size="lg" isLoading>
-            Loading
-          </Button>
-
-          <Button variant={variant} size="lg" disabled>
-            Disabled
-          </Button>
-
-          <Button variant={variant} isLoading size="lg" disabled>
-            Disabled Loading
-          </Button>
-        </div>
-      </div>
-    </>
+    <div className="flex space-x-2">
+      <Button variant="default">Default</Button>
+      <Button variant="secondary">Secondary</Button>
+      <Button variant="destructive">Destructive</Button>
+      <Button variant="outline">Outline</Button>
+      <Button variant="ghost">Ghost</Button>
+    </div>
   );
-};
+}
 
-export const IconButtons = () => {
-  const [variant, setVariant] = useState<ButtonProps["variant"]>("default");
-
+export function Sizes() {
   return (
-    <>
-      <RadioGroup
-        // @ts-expect-error
-        onValueChange={setVariant}
-        defaultValue="default"
-        className="mb-8 flex flex-row gap-8"
-      >
-        <div className="flex items-center space-x-2">
-          <RadioGroupItem value="default" id="r1" />
-          <Label htmlFor="r1">Default</Label>
-        </div>
-        <div className="flex items-center space-x-2">
-          <RadioGroupItem value="secondary" id="r2" />
-          <Label htmlFor="r2">Secondary</Label>
-        </div>
-        <div className="flex items-center space-x-2">
-          <RadioGroupItem value="destructive" id="r3" />
-          <Label htmlFor="r3">Destructive</Label>
-        </div>
-        <div className="flex items-center space-x-2">
-          <RadioGroupItem value="outline" id="r4" />
-          <Label htmlFor="r4">Outline</Label>
-        </div>
-        <div className="flex items-center space-x-2">
-          <RadioGroupItem value="ghost" id="r5" />
-          <Label htmlFor="r5">Ghost</Label>
-        </div>
-      </RadioGroup>
-
-      <div className="flex flex-col items-start gap-8">
-        <div className="flex flex-row gap-5">
-          <Button startIcon={<RocketIcon />} variant={variant} size="icon-sm" />
-
-          <Button startIcon={<RocketIcon />} variant={variant} size="icon-sm" isLoading />
-
-          <Button startIcon={<RocketIcon />} variant={variant} size="icon-sm" disabled />
-
-          <Button startIcon={<RocketIcon />} variant={variant} isLoading size="icon-sm" disabled />
-        </div>
-
-        <div className="flex flex-row gap-5">
-          <Button startIcon={<RocketIcon />} variant={variant} size="icon" />
-
-          <Button startIcon={<RocketIcon />} variant={variant} size="icon" isLoading />
-
-          <Button startIcon={<RocketIcon />} variant={variant} size="icon" disabled />
-
-          <Button startIcon={<RocketIcon />} variant={variant} isLoading size="icon" disabled />
-        </div>
-      </div>
-    </>
+    <div className="flex items-center space-x-2">
+      <Button size="sm">Small</Button>
+      <Button size="default">Default</Button>
+      <Button size="lg">Large</Button>
+    </div>
   );
-};
+}
+
+export function WithIcon() {
+  return (
+    <div className="flex space-x-2">
+      <Button startIcon={<RocketIcon className="mr-2 h-4 w-4" />}>Start Icon</Button>
+      <Button endIcon={<RocketIcon className="ml-2 h-4 w-4" />}>End Icon</Button>
+    </div>
+  );
+}
+
+export function Loading() {
+  return <Button isLoading>Loading</Button>;
+}
+
+export function Disabled() {
+  return <Button disabled>Disabled</Button>;
+}

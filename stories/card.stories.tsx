@@ -1,11 +1,11 @@
 /* c8 ignore start */
-import { Button } from "button";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "card";
-import { Input } from "input";
-import { Label } from "label";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "select";
+import { Button } from "../button";
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "../card";
+import { Input } from "../input";
+import { Label } from "../label";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "../select";
 
-export const Default = () => {
+export function Default() {
   return (
     <Card className="w-[350px]">
       <CardHeader>
@@ -42,4 +42,18 @@ export const Default = () => {
       </CardFooter>
     </Card>
   );
-};
+}
+
+export function Simple() {
+  return (
+    <Card>
+      <CardHeader>
+        <CardTitle>Card Title</CardTitle>
+        <CardDescription>Card Description</CardDescription>
+      </CardHeader>
+      <CardContent>
+        <p>Card Content</p>
+      </CardContent>
+    </Card>
+  );
+}

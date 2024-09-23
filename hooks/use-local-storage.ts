@@ -1,9 +1,13 @@
+"use client";
+
 import { isEqual, isFunction } from "radash";
 import { type Dispatch, type SetStateAction, useEffect, useRef, useState } from "react";
 import { parseJson } from "../utils/parse-json";
 import { useEventListener } from "./use-event-listener";
 
-const isNil = (val: unknown) => val == null;
+function isNil(val: unknown) {
+  return val == null;
+}
 
 export type SetValue<T> = Dispatch<SetStateAction<T>>;
 
@@ -14,7 +18,7 @@ export type SetValue<T> = Dispatch<SetStateAction<T>>;
  * @param key the key to use to store
  * @returns the value requested
  */
-const readValueFromStorage = <T>(key: string) => {
+function readValueFromStorage<T>(key: string) {
   try {
     const item = window.localStorage.getItem(key);
     const value = item && (parseJson(item) as T);
@@ -25,20 +29,22 @@ const readValueFromStorage = <T>(key: string) => {
 
     return { error: "unable to read value" };
   }
-};
+}
 
 type StorageError = {
   error: string;
 };
 
-const isError = (value: StorageError | any): value is StorageError => !!value?.error;
+function isError(value: StorageError | any): value is StorageError {
+  return !!value?.error;
+}
 
-export const useLocalStorage = <T>(key: string, initialValue: T): [T, SetValue<T>] => {
+export function useLocalStorage<T>(key: string, initialValue: T): [T, SetValue<T>] {
   const previousValueRef = useRef(initialValue);
 
   // Get from local storage then
   // parse stored json or return initialValue
-  const readValue = (): T => {
+  function readValue(): T {
     // Prevent build error "window is undefined" but keep keep working
     if (typeof window === "undefined") {
       return initialValue;
@@ -47,15 +53,14 @@ export const useLocalStorage = <T>(key: string, initialValue: T): [T, SetValue<T
     const value = readValueFromStorage<T>(key);
 
     return isError(value) || isNil(value) || value === "" ? initialValue : (value as T);
-  };
+  }
 
   // State to store our value
   // Pass initial state function to useState so logic is only executed once
   const [storedValue, setStoredValue] = useState<T>(readValue);
 
-  // Return a wrapped version of useState's setter function that ...
-  // ... persists the new value to localStorage.
-  const setValue: SetValue<T> = (value) => {
+  // Return a wrapped version of useState's setter function that persists the new value to localStorage.
+  function setValue(value: SetStateAction<T>): void {
     // Prevent build error "window is undefined" but keeps working
     if (typeof window === "undefined") {
       console.warn(`Tried setting localStorage key "${key}" even though environment is not a client`);
@@ -76,17 +81,16 @@ export const useLocalStorage = <T>(key: string, initialValue: T): [T, SetValue<T
     } catch (error) {
       console.warn(`Error setting localStorage key "${key}":`, error);
     }
-  };
+  }
 
   // biome-ignore lint/correctness/useExhaustiveDependencies: run only once
   useEffect(() => {
     const newValue = readValue();
     setStoredValue(newValue);
     previousValueRef.current = newValue;
-    // run only once
   }, []);
 
-  const handleStorageChange = () => {
+  function handleStorageChange() {
     const newValue = readValue();
 
     if (isEqual(newValue, previousValueRef.current)) {
@@ -94,8 +98,7 @@ export const useLocalStorage = <T>(key: string, initialValue: T): [T, SetValue<T
     }
     setStoredValue(newValue);
     previousValueRef.current = newValue;
-    // run only once
-  };
+  }
 
   // this only works for other documents, not the current one
   useEventListener("storage", handleStorageChange);
@@ -105,4 +108,4 @@ export const useLocalStorage = <T>(key: string, initialValue: T): [T, SetValue<T
   useEventListener("local-storage", handleStorageChange);
 
   return [storedValue, setValue];
-};
+}
