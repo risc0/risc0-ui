@@ -1,5 +1,5 @@
-import { RocketIcon } from "lucide-react";
 /* c8 ignore start */
+import { RocketIcon } from "lucide-react";
 import { Button } from "../button";
 
 export function Default() {

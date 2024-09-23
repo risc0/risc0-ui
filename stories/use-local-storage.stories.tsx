@@ -1,5 +1,5 @@
-import { Button } from "button";
 /* c8 ignore start */
+import { Button } from "button";
 import { useLocalStorage } from "../hooks/use-local-storage";
 import { Input } from "../input";
 import { Label } from "../label";

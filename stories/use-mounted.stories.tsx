@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
 /* c8 ignore start */
+import { useEffect, useState } from "react";
 import { useMounted } from "../hooks/use-mounted";
 
 export function Default() {
