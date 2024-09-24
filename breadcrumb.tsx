@@ -43,16 +43,15 @@ const BreadcrumbLink = forwardRef<
   );
 });
 
-const BreadcrumbPage = forwardRef<HTMLLIElement, ComponentPropsWithoutRef<"li">>(({ className, ...props }, ref) => (
-  <li ref={ref}>
-    <span
-      role="link"
-      aria-disabled="true"
-      aria-current="page"
-      className={cn("text-foreground", className)}
-      {...props}
-    />
-  </li>
+const BreadcrumbPage = forwardRef<HTMLLIElement, ComponentPropsWithoutRef<"span">>(({ className, ...props }, ref) => (
+  <span
+    ref={ref}
+    aria-disabled="true"
+    role="link"
+    aria-current="page"
+    className={cn("text-foreground", className)}
+    {...props}
+  />
 ));
 
 const BreadcrumbSeparator = ({ children, className, ...props }: ComponentProps<"li">) => (
