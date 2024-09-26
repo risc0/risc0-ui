@@ -24,6 +24,9 @@
     "module": "ESNext",
     "moduleResolution": "Bundler",
     "noEmit": true,
-    "plugins": [{ "name": "next" }]
+    "plugins": [{ "name": "next" }],
+
+    // testing & types
+    "types": ["node", "jest", "@testing-library/jest-dom"]
   }
 }
