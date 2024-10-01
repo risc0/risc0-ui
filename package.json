@@ -1,6 +1,6 @@
 {
   "name": "@risc0/ui",
-  "version": "0.0.179",
+  "version": "0.0.180",
   "private": false,
   "sideEffects": false,
   "type": "module",
@@ -55,7 +55,6 @@
     "@testing-library/jest-dom": "6.5.0",
     "@testing-library/react": "16.0.1",
     "@testing-library/react-hooks": "8.0.1",
-    "@types/jest": "29.5.13",
     "@vitejs/plugin-react-swc": "3.7.1",
     "@vitest/coverage-v8": "2.0.5",
     "deepmerge": "4.3.1",

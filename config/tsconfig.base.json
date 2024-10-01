@@ -26,7 +26,7 @@
     "noEmit": true,
     "plugins": [{ "name": "next" }],
 
-    // testing & types
-    "types": ["node", "jest", "@testing-library/jest-dom"]
+    // types
+    "types": ["node"]
   }
 }
