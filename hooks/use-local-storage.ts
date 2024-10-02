@@ -37,7 +37,7 @@ function isError(value: StorageError | any): value is StorageError {
 }
 
 export function useLocalStorage<T>(key: string, initialValue: T): [T, SetValue<T>] {
-  const previousValueRef = useRef(initialValue);
+  const previousValueRef = useRef<T>(initialValue);
 
   function readValue(): T {
     if (typeof window === "undefined") {
@@ -50,10 +50,8 @@ export function useLocalStorage<T>(key: string, initialValue: T): [T, SetValue<T
 
   function subscribe(callback: () => void) {
     window.addEventListener("storage", callback);
-    window.addEventListener("local-storage", callback);
     return () => {
       window.removeEventListener("storage", callback);
-      window.removeEventListener("local-storage", callback);
     };
   }
 
@@ -66,15 +64,21 @@ export function useLocalStorage<T>(key: string, initialValue: T): [T, SetValue<T
     }
 
     try {
-      const newValue = isFunction(value) ? (value as (prevState: T) => T)(storedValue) : value;
+      const newValue = isFunction(value) ? (value as (prevState: T) => T)(previousValueRef.current) : value;
 
-      window.localStorage.setItem(key, JSON.stringify(newValue));
-      previousValueRef.current = newValue;
-
-      window.dispatchEvent(new Event("local-storage"));
+      if (JSON.stringify(newValue) !== JSON.stringify(previousValueRef.current)) {
+        window.localStorage.setItem(key, JSON.stringify(newValue));
+        previousValueRef.current = newValue;
+        window.dispatchEvent(new Event("storage"));
+      }
     } catch (error) {
       console.warn(`Error setting localStorage key "${key}":`, error);
     }
+  }
+
+  // Update previousValueRef when storedValue changes
+  if (JSON.stringify(storedValue) !== JSON.stringify(previousValueRef.current)) {
+    previousValueRef.current = storedValue;
   }
 
   return [storedValue, setValue];
