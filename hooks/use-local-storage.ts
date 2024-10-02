@@ -1,15 +1,12 @@
-"use client";
-
-import { isEqual, isFunction } from "radash";
-import { type Dispatch, type SetStateAction, useEffect, useRef, useState } from "react";
+import { isFunction } from "radash";
+import { type SetStateAction, useRef, useSyncExternalStore } from "react";
 import { parseJson } from "../utils/parse-json";
-import { useEventListener } from "./use-event-listener";
 
 function isNil(val: unknown) {
   return val == null;
 }
 
-export type SetValue<T> = Dispatch<SetStateAction<T>>;
+export type SetValue<T> = (value: SetStateAction<T>) => void;
 
 /**
  * Creating and read here and using window.setItem for writes. This avoids
@@ -42,70 +39,43 @@ function isError(value: StorageError | any): value is StorageError {
 export function useLocalStorage<T>(key: string, initialValue: T): [T, SetValue<T>] {
   const previousValueRef = useRef(initialValue);
 
-  // Get from local storage then
-  // parse stored json or return initialValue
   function readValue(): T {
-    // Prevent build error "window is undefined" but keep keep working
     if (typeof window === "undefined") {
       return initialValue;
     }
 
     const value = readValueFromStorage<T>(key);
-
     return isError(value) || isNil(value) || value === "" ? initialValue : (value as T);
   }
 
-  // State to store our value
-  // Pass initial state function to useState so logic is only executed once
-  const [storedValue, setStoredValue] = useState<T>(readValue);
+  function subscribe(callback: () => void) {
+    window.addEventListener("storage", callback);
+    window.addEventListener("local-storage", callback);
+    return () => {
+      window.removeEventListener("storage", callback);
+      window.removeEventListener("local-storage", callback);
+    };
+  }
 
-  // Return a wrapped version of useState's setter function that persists the new value to localStorage.
+  const storedValue = useSyncExternalStore(subscribe, readValue, () => initialValue);
+
   function setValue(value: SetStateAction<T>): void {
-    // Prevent build error "window is undefined" but keeps working
     if (typeof window === "undefined") {
       console.warn(`Tried setting localStorage key "${key}" even though environment is not a client`);
+      return;
     }
 
     try {
-      // Allow value to be a function so we have the same API as useState
       const newValue = isFunction(value) ? (value as (prevState: T) => T)(storedValue) : value;
 
-      // Save to local storage
       window.localStorage.setItem(key, JSON.stringify(newValue));
+      previousValueRef.current = newValue;
 
-      // Save state
-      setStoredValue(newValue);
-
-      // We dispatch a custom event so every useLocalStorage hook are notified
       window.dispatchEvent(new Event("local-storage"));
     } catch (error) {
       console.warn(`Error setting localStorage key "${key}":`, error);
     }
   }
-
-  // biome-ignore lint/correctness/useExhaustiveDependencies: run only once
-  useEffect(() => {
-    const newValue = readValue();
-    setStoredValue(newValue);
-    previousValueRef.current = newValue;
-  }, []);
-
-  function handleStorageChange() {
-    const newValue = readValue();
-
-    if (isEqual(newValue, previousValueRef.current)) {
-      return;
-    }
-    setStoredValue(newValue);
-    previousValueRef.current = newValue;
-  }
-
-  // this only works for other documents, not the current one
-  useEventListener("storage", handleStorageChange);
-
-  // this is a custom event, triggered in writeValueToLocalStorage
-  // See: useLocalStorage()
-  useEventListener("local-storage", handleStorageChange);
 
   return [storedValue, setValue];
 }
