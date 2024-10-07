@@ -42,10 +42,10 @@ describe("Button", () => {
     expect(loaderElement).toBeInTheDocument();
   });
 
-  it("reanders Loader2Icon, but hidden when isLoading is false", () => {
+  it("renders Loader2Icon, but hidden when isLoading is false", () => {
     render(<Button isLoading={false} />);
     const loaderElement = screen.getByTestId("loader-icon");
     expect(loaderElement).toBeInTheDocument();
-    expect(loaderElement).toHaveClass("opacity-0");
+    expect(loaderElement).toHaveAttribute("aria-hidden", "true");
   });
 });

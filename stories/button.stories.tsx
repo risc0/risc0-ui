@@ -1,5 +1,6 @@
 /* c8 ignore start */
-import { RocketIcon } from "lucide-react";
+import { Rocket, RocketIcon, RockingChair } from "lucide-react";
+import { useState } from "react";
 import { Button } from "../button";
 
 export function Default() {
@@ -31,14 +32,33 @@ export function Sizes() {
 export function WithIcon() {
   return (
     <div className="flex space-x-2">
-      <Button startIcon={<RocketIcon className="mr-2 h-4 w-4" />}>Start Icon</Button>
-      <Button endIcon={<RocketIcon className="ml-2 h-4 w-4" />}>End Icon</Button>
+      <Button startIcon={<RocketIcon className="h-4 w-4" />}>Start Icon</Button>
+      <Button endIcon={<RocketIcon className="h-4 w-4" />}>End Icon</Button>
     </div>
   );
 }
 
 export function Loading() {
-  return <Button isLoading>Loading</Button>;
+  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading2, setIsLoading2] = useState(false);
+  const [isLoading3, setIsLoading3] = useState(false);
+
+  return (
+    <div className="flex space-x-2">
+      <Button isLoading={isLoading} onClick={() => setIsLoading(!isLoading)}>
+        Loading (click me)
+      </Button>
+      <Button startIcon={<RocketIcon />} isLoading={isLoading2} onClick={() => setIsLoading2(!isLoading2)}>
+        Loading (click me)
+      </Button>
+      <Button
+        size="icon"
+        startIcon={<RocketIcon />}
+        isLoading={isLoading3}
+        onClick={() => setIsLoading3(!isLoading3)}
+      />
+    </div>
+  );
 }
 
 export function Disabled() {

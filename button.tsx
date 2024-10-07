@@ -60,12 +60,12 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       <Component className={cn(buttonVariants({ variant, size, className }))} ref={ref} {...rest}>
         <Loader2Icon
           data-testid="loader-icon"
+          aria-hidden={!isLoading}
           className={cn(
-            "animate-spin",
             !startIcon && "transition-all",
-            isLoading && "mr-2 opacity-100",
+            isLoading && "mr-2 animate-spin",
             iconVariants({ size }),
-            !isLoading && "mr-0 max-w-0 opacity-0",
+            !isLoading && "mr-0 max-w-0",
           )}
         />
         {!isLoading &&
