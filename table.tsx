@@ -1,11 +1,13 @@
 import { type HTMLAttributes, type TdHTMLAttributes, type ThHTMLAttributes, forwardRef } from "react";
 import { cn } from "./cn";
 
-const Table = forwardRef<HTMLTableElement, HTMLAttributes<HTMLTableElement>>(({ className, ...rest }, ref) => (
-  <div className="relative w-full overflow-auto">
-    <table ref={ref} className={cn("w-full caption-bottom text-sm", className)} {...rest} />
-  </div>
-));
+const Table = forwardRef<HTMLTableElement, HTMLAttributes<HTMLTableElement> & { wrapperClassName?: string }>(
+  ({ wrapperClassName, className, ...rest }, ref) => (
+    <div className={cn("relative w-full overflow-auto", wrapperClassName)}>
+      <table ref={ref} className={cn("w-full caption-bottom text-sm", className)} {...rest} />
+    </div>
+  ),
+);
 
 const TableHeader = forwardRef<HTMLTableSectionElement, HTMLAttributes<HTMLTableSectionElement>>(
   ({ className, ...rest }, ref) => <thead ref={ref} className={cn("[&_tr]:border-b", className)} {...rest} />,
