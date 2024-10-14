@@ -4,7 +4,7 @@ import { Loader2Icon } from "lucide-react";
 import { type ButtonHTMLAttributes, type ReactElement, cloneElement, forwardRef } from "react";
 import { cn } from "./cn";
 
-const buttonVariants = cva(
+export const buttonVariants = cva(
   "inline-flex items-center justify-center whitespace-nowrap rounded-md font-bold text-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:pointer-events-none disabled:opacity-50",
   {
     variants: {
@@ -30,7 +30,7 @@ const buttonVariants = cva(
   },
 );
 
-const iconVariants = cva(undefined, {
+export const iconVariants = cva(undefined, {
   variants: {
     size: {
       default: "size-4 max-w-4",
@@ -58,16 +58,13 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 
     return (
       <Component className={cn(buttonVariants({ variant, size, className }))} ref={ref} {...rest}>
-        <Loader2Icon
+        <div
           data-testid="loader-icon"
           aria-hidden={!isLoading}
-          className={cn(
-            !startIcon && "transition-all",
-            isLoading && "mr-2 animate-spin",
-            iconVariants({ size }),
-            !isLoading && "mr-0 max-w-0",
-          )}
-        />
+          className={cn(!startIcon && "transition-all", iconVariants({ size }), "mr-2", !isLoading && "mr-0 max-w-0")}
+        >
+          {isLoading && <Loader2Icon className={cn(iconVariants({ size }), "animate-spin")} />}
+        </div>
         {!isLoading &&
           startIcon &&
           cloneElement(startIcon as ReactElement, {
@@ -85,4 +82,4 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 
 Button.displayName = "Button";
 
-export { Button, buttonVariants };
+export { Button };
