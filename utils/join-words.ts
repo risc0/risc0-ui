@@ -1,5 +1,3 @@
-import { join, toLowerCase } from "string-ts";
-
 const DONT_FORMAT_THESE_WORDS = [
   "INSN",
   "OS",
@@ -14,7 +12,7 @@ const DONT_FORMAT_THESE_WORDS = [
   "BTC",
   "AVAX",
 ];
-const DONT_FORMAT_THESE_WORDS_LOWERCASE = DONT_FORMAT_THESE_WORDS.map(toLowerCase);
+const DONT_FORMAT_THESE_WORDS_LOWERCASE = DONT_FORMAT_THESE_WORDS.map((word) => word.toLowerCase());
 
 export function joinWords(str: string): string {
   if (!str) {
@@ -26,7 +24,7 @@ export function joinWords(str: string): string {
   const wordsList = formattedString.split(/[\s-_\/\\.,]/); // Remove spaces, hyphens, underscores, slashes, backslashes, dots, and commas
 
   const formattedWords = wordsList.map((word) => {
-    const lowerCaseWord = toLowerCase(word);
+    const lowerCaseWord = word.toLowerCase();
     const index = DONT_FORMAT_THESE_WORDS_LOWERCASE.indexOf(lowerCaseWord);
 
     if (index !== -1) {
@@ -36,5 +34,5 @@ export function joinWords(str: string): string {
     return word;
   });
 
-  return join(formattedWords, " ");
+  return formattedWords.join(" ");
 }
