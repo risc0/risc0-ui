@@ -1,6 +1,6 @@
 {
   "name": "@risc0/ui",
-  "version": "0.0.200",
+  "version": "0.0.201",
   "private": false,
   "sideEffects": false,
   "type": "module",
@@ -34,20 +34,20 @@
     "autoprefixer": "10.4.20",
     "class-variance-authority": "0.7.1-canary.2",
     "clsx": "2.1.1",
-    "cmdk": "1.0.0",
+    "cmdk": "1.0.1",
     "deepmerge": "4.3.1",
-    "lucide-react": "0.453.0",
+    "lucide-react": "0.454.0",
     "next-themes": "0.3.0",
     "p-safe": "1.0.0",
     "react-hook-form": "7.52.2",
-    "recharts": "2.13.0",
+    "recharts": "2.13.2",
     "sonner": "1.5.0",
     "tailwind-merge": "2.5.4",
     "tailwindcss": "3.4.14",
     "tailwindcss-animate": "1.0.7",
     "typescript": "5.7.0-dev.20240925",
     "usehooks-ts": "3.1.0",
-    "vaul": "1.1.0"
+    "vaul": "1.1.1"
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
@@ -64,7 +64,7 @@
   "peerDependencies": {
     "@types/react": "^18",
     "@types/react-dom": "^18",
-    "react": "^18",
-    "react-dom": "^18"
+    "react": "^18 || ^19",
+    "react-dom": "^18 || ^19"
   }
 }
