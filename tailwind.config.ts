@@ -1,9 +1,9 @@
 /* c8 ignore start */
-import deepmerge from "deepmerge";
+import { toMerged } from "es-toolkit";
 import type { Config } from "tailwindcss";
 import tailwindConfig from "./config/tailwind.config.base";
 
-const config = deepmerge(tailwindConfig, {
+const config = toMerged(tailwindConfig, {
   theme: {
     extend: {
       fontFamily: {
