@@ -1,6 +1,6 @@
 {
   "name": "@risc0/ui",
-  "version": "0.0.216",
+  "version": "0.0.217",
   "private": false,
   "sideEffects": false,
   "type": "module",
@@ -35,7 +35,7 @@
     "class-variance-authority": "0.7.1-canary.2",
     "clsx": "2.1.1",
     "cmdk": "1.0.0",
-    "es-toolkit": "1.27.0",
+    "deepmerge": "4.3.1",
     "lucide-react": "0.460.0",
     "react-hook-form": "7.53.2",
     "recharts": "2.13.3",
