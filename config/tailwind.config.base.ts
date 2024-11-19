@@ -5,11 +5,11 @@ import tailwindcssAnimate from "tailwindcss-animate";
 const config = {
   darkMode: ["class"],
   content: [
-    "../../apps/**/*.{ts,tsx}",
-    "../../packages/**/*.{ts,tsx}",
-    "../../node_modules/@risc0/ui/**/*.{ts,tsx}",
-    "./node_modules/@risc0/ui/**/*.{ts,tsx}",
-    "./src/**/*.{ts,tsx}",
+    "../../apps/**/*.{ts,tsx,js,jsx,mdx}",
+    "../../packages/**/*.{ts,tsx,js,jsx,mdx}",
+    "../../node_modules/@risc0/ui/**/*.{ts,tsx,js,jsx,mdx}",
+    "./node_modules/@risc0/ui/**/*.{ts,tsx,js,jsx,mdx}",
+    "./src/**/*.{js,jsx,ts,tsx,mdx}",
   ],
   prefix: "",
   theme: {
