@@ -10,7 +10,7 @@ const config = {
     "../../node_modules/@risc0/ui/**/*.{ts,tsx}",
     "./node_modules/@risc0/ui/**/*.{ts,tsx}",
     "./src/**/*.{ts,tsx}",
-  ], // keep those imports
+  ],
   prefix: "",
   theme: {
     container: {

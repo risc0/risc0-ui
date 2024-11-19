@@ -14,4 +14,6 @@ const config = deepmerge(tailwindConfig, {
   },
 }) satisfies Config;
 
+config.content = ["**/*.{ts,tsx}"];
+
 export default config;
