@@ -9,7 +9,7 @@ const config = {
     "../../packages/**/*.{ts,tsx}",
     "../../node_modules/@risc0/ui/**/*.{ts,tsx}",
     "./node_modules/@risc0/ui/**/*.{ts,tsx}",
-    "./**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
   ], // keep those imports
   prefix: "",
   theme: {
