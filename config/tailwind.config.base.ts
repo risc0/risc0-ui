@@ -6,6 +6,7 @@ const config = {
   darkMode: ["class"],
   content: [
     "../../packages/shared/client/**/*.{ts,tsx,js,jsx,mdx}",
+    "../../packages/shared/server/**/*.{ts,tsx,js,jsx,mdx}",
     "../../node_modules/@risc0/ui/**/*.{ts,tsx,js,jsx,mdx}",
     "./node_modules/@risc0/ui/**/*.{ts,tsx,js,jsx,mdx}",
     "./src/**/*.{js,jsx,ts,tsx,mdx}",
