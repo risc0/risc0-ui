@@ -1,12 +1,14 @@
 import { type InputHTMLAttributes, type ReactElement, cloneElement, forwardRef } from "react";
+import type { Simplify } from "type-fest";
 import { cn } from "./cn";
 
-export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
-  // any other prop goes here
-  startIcon?: ReactElement;
-  endIcon?: ReactElement;
-  wrapperClassName?: string;
-}
+export type InputProps = Simplify<
+  InputHTMLAttributes<HTMLInputElement> & {
+    startIcon?: ReactElement;
+    endIcon?: ReactElement;
+    wrapperClassName?: string;
+  }
+>;
 
 const Input = forwardRef<HTMLInputElement, InputProps>(
   ({ startIcon, endIcon, className, type, wrapperClassName, ...rest }, ref) => (

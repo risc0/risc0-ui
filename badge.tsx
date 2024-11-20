@@ -1,8 +1,9 @@
 import { type VariantProps, cva } from "class-variance-authority";
 import type { HTMLAttributes } from "react";
+import type { Simplify } from "type-fest";
 import { cn } from "./cn";
 
-const badgeVariants = cva(
+export const badgeVariants = cva(
   "inline-flex items-center rounded-md border px-2.5 py-0.5 font-bold text-xs transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2",
   {
     variants: {
@@ -19,12 +20,13 @@ const badgeVariants = cva(
   },
 );
 
-export interface BadgeProps extends HTMLAttributes<HTMLDivElement>, VariantProps<typeof badgeVariants> {
-  // any other prop goes here
-}
+export type BadgeProps = Simplify<
+  HTMLAttributes<HTMLDivElement> &
+    VariantProps<typeof badgeVariants> & {
+      // any other prop goes here
+    }
+>;
 
-function Badge({ className, variant, ...rest }: BadgeProps) {
+export function Badge({ className, variant, ...rest }: BadgeProps) {
   return <div data-testid="badge" {...rest} className={cn(badgeVariants({ variant }), className)} />;
 }
-
-export { Badge, badgeVariants };

@@ -1,9 +1,12 @@
 import { type TextareaHTMLAttributes, forwardRef } from "react";
+import type { Simplify } from "type-fest";
 import { cn } from "./cn";
 
-export interface TextareaProps extends TextareaHTMLAttributes<HTMLTextAreaElement> {
-  // any other prop goes here
-}
+export type TextareaProps = Simplify<
+  TextareaHTMLAttributes<HTMLTextAreaElement> & {
+    // any other prop goes here
+  }
+>;
 
 const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(({ className, ...rest }, ref) => (
   <textarea

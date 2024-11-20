@@ -2,6 +2,7 @@ import { Slot } from "@radix-ui/react-slot";
 import { type VariantProps, cva } from "class-variance-authority";
 import { Loader2Icon } from "lucide-react";
 import { type ButtonHTMLAttributes, type ReactElement, cloneElement, forwardRef } from "react";
+import type { Simplify } from "type-fest";
 import { cn } from "./cn";
 
 export const buttonVariants = cva(
@@ -45,12 +46,15 @@ export const iconVariants = cva(undefined, {
   },
 });
 
-export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>, VariantProps<typeof buttonVariants> {
-  asChild?: boolean;
-  isLoading?: boolean;
-  startIcon?: ReactElement;
-  endIcon?: ReactElement;
-}
+export type ButtonProps = Simplify<
+  ButtonHTMLAttributes<HTMLButtonElement> &
+    VariantProps<typeof buttonVariants> & {
+      asChild?: boolean;
+      isLoading?: boolean;
+      startIcon?: ReactElement;
+      endIcon?: ReactElement;
+    }
+>;
 
 const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, startIcon, isLoading = false, variant, endIcon, size, children, asChild = false, ...rest }, ref) => {
