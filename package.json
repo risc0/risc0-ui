@@ -1,6 +1,6 @@
 {
   "name": "@risc0/ui",
-  "version": "0.0.225",
+  "version": "0.0.226",
   "private": false,
   "sideEffects": false,
   "type": "module",
@@ -43,7 +43,7 @@
     "tailwindcss": "3.4.15",
     "tailwindcss-animate": "1.0.7",
     "type-fest": "4.27.0",
-    "typescript": "5.7.0-dev.20240925",
+    "typescript": "5.7.2",
     "vaul": "1.1.1"
   },
   "devDependencies": {
