@@ -1,6 +1,6 @@
 {
   "name": "@risc0/ui",
-  "version": "0.0.227",
+  "version": "0.0.228",
   "private": false,
   "sideEffects": false,
   "type": "module",
@@ -39,7 +39,7 @@
     "lucide-react": "0.460.0",
     "react-hook-form": "7.53.2",
     "recharts": "2.13.3",
-    "tailwind-merge": "2.5.4",
+    "tailwind-merge": "2.5.5",
     "tailwindcss": "3.4.15",
     "tailwindcss-animate": "1.0.7",
     "type-fest": "4.28.0",
