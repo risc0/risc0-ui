@@ -1,6 +1,6 @@
 {
   "name": "@risc0/ui",
-  "version": "0.0.242",
+  "version": "0.0.243",
   "private": false,
   "sideEffects": false,
   "type": "module",
@@ -17,7 +17,6 @@
   "dependencies": {
     "@biomejs/biome": "1.9.4",
     "@formkit/auto-animate": "0.8.2",
-    "@neondatabase/serverless": "0.10.4",
     "@number-flow/react": "0.4.2",
     "@poppinss/intl-formatter": "3.0.3",
     "@radix-ui/react-avatar": "1.1.1",
@@ -67,6 +66,7 @@
     "notion-utils": "6.16.0",
     "npm-run-all": "4.1.5",
     "nuqs": "2.2.3",
+    "postgres": "3.4.5",
     "pretty-ms": "9.2.0",
     "prismjs": "1.29.0",
     "react-hook-form": "7.53.2",
