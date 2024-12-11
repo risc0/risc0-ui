@@ -1,6 +1,6 @@
 {
   "name": "@risc0/ui",
-  "version": "0.0.245",
+  "version": "0.0.246",
   "private": false,
   "sideEffects": false,
   "type": "module",
@@ -41,6 +41,7 @@
     "@tanstack/react-query-devtools": "5.62.7",
     "@tanstack/react-table": "8.20.5",
     "@total-typescript/ts-reset": "0.6.1",
+    "@types/ws": "8.5.13",
     "@vercel/blob": "0.27.0",
     "@vercel/kv": "3.0.0",
     "autoprefixer": "10.4.20",
