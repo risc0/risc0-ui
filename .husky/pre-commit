@@ -1,4 +1,20 @@
 #!/bin/bash
 
+#!/bin/bash
+
+# Get the prepared commit message
+COMMIT_MSG_FILE=".git/COMMIT_EDITMSG"
+VERSION=$(node -p "require('./package.json').version")
+
+# Run pre-commit tasks
 bun run pre-commit
+
+# Prepend version to commit message if it doesn't already start with the version
+if [ -f "$COMMIT_MSG_FILE" ]; then
+    COMMIT_MSG=$(cat "$COMMIT_MSG_FILE")
+    if [[ ! $COMMIT_MSG =~ ^$VERSION ]]; then
+        echo "$VERSION - $COMMIT_MSG" > "$COMMIT_MSG_FILE"
+    fi
+fi
+
 git add .
