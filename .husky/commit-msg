@@ -1,0 +1,10 @@
+#!/bin/bash
+
+VERSION=$(grep -o '"version": "[^"]*"' package.json | cut -d'"' -f4)
+COMMIT_MSG_FILE=$1
+COMMIT_MSG=$(cat "$COMMIT_MSG_FILE")
+
+# Only prepend version if it's not already there
+if [[ ! $COMMIT_MSG =~ ^$VERSION ]]; then
+    echo "$VERSION - $COMMIT_MSG" > "$COMMIT_MSG_FILE"
+fi

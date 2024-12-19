@@ -1,6 +1,6 @@
 {
   "name": "@risc0/ui",
-  "version": "0.0.257",
+  "version": "0.0.258",
   "private": false,
   "sideEffects": false,
   "type": "module",
@@ -9,6 +9,7 @@
     "check:test": "vitest run --silent --coverage && istanbul-badges-readme",
     "check:types": "tsc",
     "check:version": "bunx changelogen --bump --no-output",
+    "commit": "node scripts/commit.js",
     "pre-commit": "run-p check:*",
     "prepare": "npx husky",
     "sort-package": "bunx sort-package-json 'package.json'",
