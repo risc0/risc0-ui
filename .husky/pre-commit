@@ -4,7 +4,7 @@
 
 # Get the prepared commit message
 COMMIT_MSG_FILE=".git/COMMIT_EDITMSG"
-VERSION=$(node -p "require('./package.json').version")
+VERSION=$(grep -o '"version": "[^"]*"' package.json | cut -d'"' -f4)
 
 # Run pre-commit tasks
 bun run pre-commit
