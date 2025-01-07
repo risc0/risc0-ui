@@ -36,6 +36,7 @@ TooltipArrow.displayName = TooltipPrimitive.Arrow.displayName;
 
 const TooltipProvider = TooltipPrimitive.Provider;
 const Tooltip = TooltipPrimitive.Root;
+const TooltipPortal = TooltipPrimitive.Portal;
 const TooltipTrigger = TooltipPrimitive.Trigger;
 
-export { Tooltip, TooltipArrow, TooltipTrigger, TooltipContent, TooltipProvider };
+export { Tooltip, TooltipArrow, TooltipTrigger, TooltipContent, TooltipProvider, TooltipPortal };
