@@ -13,10 +13,17 @@ const Progress = forwardRef<
     className={cn("relative h-1 w-full overflow-hidden rounded-full bg-primary/20", className)}
     {...rest}
   >
-    <ProgressPrimitive.Indicator
-      className="h-full w-full flex-1 rounded-full bg-primary transition-all"
-      style={{ transform: `translateX(-${100 - (value || 0)}%)` }}
-    />
+    {value != null ? (
+      <ProgressPrimitive.Indicator
+        className="h-full w-full flex-1 rounded-full bg-primary transition-transform duration-500 ease-in-out"
+        style={{ transform: `translateX(-${100 - (value || 0)}%)` }}
+      />
+    ) : (
+      <>
+        <ProgressPrimitive.Indicator className="absolute h-full w-auto animate-indeterminate1 rounded-full bg-primary" />
+        <ProgressPrimitive.Indicator className="absolute h-full w-auto animate-indeterminate2 rounded-full bg-primary" />
+      </>
+    )}
   </ProgressPrimitive.Root>
 ));
 

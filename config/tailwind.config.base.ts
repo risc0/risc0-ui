@@ -106,16 +106,46 @@ const config = {
           "43.5%": { transform: "translateX(2px) rotateY(3deg)" },
           "50%": { transform: "translateX(0)" },
         },
+        indeterminate1: {
+          "0%": {
+            left: "-35%",
+            right: "100%",
+          },
+          "60%": {
+            left: "100%",
+            right: "-90%",
+          },
+          "100%": {
+            left: "100%",
+            right: "-90%",
+          },
+        },
+        indeterminate2: {
+          "0%": {
+            left: "-200%",
+            right: "100%",
+          },
+          "60%": {
+            left: "100%",
+            right: "-8%",
+          },
+          "100%": {
+            left: "100%",
+            right: "-8%",
+          },
+        },
       },
       animation: {
-        "fade-in": "fade-in 1s ease-in-out",
-        "fade-in-up": "fade-in-up 1s ease-in-out",
+        "accordion-down": "accordion-down 0.2s ease-out",
+        "accordion-up": "accordion-up 0.2s ease-out",
         "fade-in-down": "fade-in-down 1s ease-in-out",
         "fade-in-left": "fade-in-left 1s ease-in-out",
         "fade-in-right": "fade-in-right 1s ease-in-out",
+        "fade-in-up": "fade-in-up 1s ease-in-out",
+        "fade-in": "fade-in 1s ease-in-out",
         "head-shake": "head-shake 1s ease-in-out",
-        "accordion-down": "accordion-down 0.2s ease-out",
-        "accordion-up": "accordion-up 0.2s ease-out",
+        indeterminate1: "indeterminate1 2.1s cubic-bezier(0.65, 0.815, 0.735, 0.395) infinite",
+        indeterminate2: "indeterminate2 2.1s cubic-bezier(0.165, 0.84, 0.44, 1) 1.15s infinite",
         tilt: "tilt 10s linear infinite",
       },
     },
