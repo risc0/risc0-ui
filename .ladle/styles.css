@@ -32,7 +32,7 @@
 
 * {
   /* apply letter-spacing to all html elements */
-  @apply tracking-wider;
+  letter-spacing: 0.05em;
 }
 
 .font-mono {
