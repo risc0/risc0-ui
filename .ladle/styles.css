@@ -1,3 +1,5 @@
+@import "tailwindcss";
+
 @font-face {
   /* includes font-weights from 600-900 */
   font-family: "Europa";

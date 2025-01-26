@@ -4,7 +4,7 @@ import type { Simplify } from "type-fest";
 import { cn } from "./cn";
 
 export const badgeVariants = cva(
-  "inline-flex items-center rounded-md border px-2.5 py-0.5 font-bold text-xs transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2",
+  "inline-flex items-center rounded-md border px-2.5 py-0.5 font-bold text-xs transition-colors focus:outline-hidden focus:ring-2 focus:ring-ring focus:ring-offset-2",
   {
     variants: {
       variant: {

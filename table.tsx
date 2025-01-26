@@ -21,7 +21,7 @@ const TableBody = forwardRef<HTMLTableSectionElement, HTMLAttributes<HTMLTableSe
 
 const TableFooter = forwardRef<HTMLTableSectionElement, HTMLAttributes<HTMLTableSectionElement>>(
   ({ className, ...rest }, ref) => (
-    <tfoot ref={ref} className={cn("border-t bg-muted/50 [&>tr]:last:border-b-0", className)} {...rest} />
+    <tfoot ref={ref} className={cn("border-t bg-muted/50 last:[&>tr]:border-b-0", className)} {...rest} />
   ),
 );
 
