@@ -1,5 +1,3 @@
-@import "tailwindcss";
-
 @font-face {
   /* includes font-weights from 600-900 */
   font-family: "Europa";
@@ -34,7 +32,7 @@
 
 * {
   /* apply letter-spacing to all html elements */
-  @apply tracking-wider;
+  letter-spacing: 0.05em;
 }
 
 .font-mono {
