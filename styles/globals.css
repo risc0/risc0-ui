@@ -331,6 +331,10 @@ body[data-scroll-locked] {
   width: 100%;
 }
 
+button {
+  cursor: pointer;
+}
+
 iframe {
   /* for google login button having a white background otherwise */
   color-scheme: auto;
