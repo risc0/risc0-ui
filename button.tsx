@@ -6,7 +6,7 @@ import type { Simplify } from "type-fest";
 import { cn } from "./cn";
 
 export const buttonVariants = cva(
-  "inline-flex items-center justify-center whitespace-nowrap rounded-md font-bold text-sm transition-colors focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:pointer-events-none disabled:opacity-50",
+  "inline-flex cursor-pointer items-center justify-center whitespace-nowrap rounded-md font-bold text-sm transition-colors focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:pointer-events-none disabled:opacity-50",
   {
     variants: {
       variant: {
