@@ -1,11 +1,10 @@
 import { Slot } from "@radix-ui/react-slot";
 import { type VariantProps, cva } from "class-variance-authority";
 import { Loader2Icon } from "lucide-react";
-import { type ButtonHTMLAttributes, type ReactElement, cloneElement, forwardRef } from "react";
-import type { Simplify } from "type-fest";
+import { type ComponentProps, type ReactElement, cloneElement } from "react";
 import { cn } from "./cn";
 
-export const buttonVariants = cva(
+const buttonVariants = cva(
   "inline-flex items-center justify-center whitespace-nowrap rounded-md font-bold text-sm transition-colors focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:pointer-events-none disabled:opacity-50",
   {
     variants: {
@@ -31,7 +30,7 @@ export const buttonVariants = cva(
   },
 );
 
-export const iconVariants = cva(undefined, {
+const iconVariants = cva(undefined, {
   variants: {
     size: {
       default: "size-4 max-w-4",
@@ -46,44 +45,46 @@ export const iconVariants = cva(undefined, {
   },
 });
 
-export type ButtonProps = Simplify<
-  ButtonHTMLAttributes<HTMLButtonElement> &
-    VariantProps<typeof buttonVariants> & {
-      asChild?: boolean;
-      isLoading?: boolean;
-      startIcon?: ReactElement;
-      endIcon?: ReactElement;
-    }
->;
+function Button({
+  className,
+  startIcon,
+  isLoading = false,
+  variant,
+  endIcon,
+  size,
+  children,
+  asChild = false,
+  ...rest
+}: ComponentProps<"button"> &
+  VariantProps<typeof buttonVariants> & {
+    asChild?: boolean;
+    isLoading?: boolean;
+    startIcon?: ReactElement<any>;
+    endIcon?: ReactElement<any>;
+  }) {
+  const Component = asChild ? Slot : "button";
 
-const Button = forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, startIcon, isLoading = false, variant, endIcon, size, children, asChild = false, ...rest }, ref) => {
-    const Component = asChild ? Slot : "button";
+  return (
+    <Component className={cn(buttonVariants({ variant, size, className }))} {...rest}>
+      <div
+        data-testid="loader-icon"
+        aria-hidden={!isLoading}
+        className={cn(!startIcon && "transition-all", "mr-2", iconVariants({ size }), !isLoading && "mr-0 max-w-0")}
+      >
+        {isLoading && <Loader2Icon className={cn(iconVariants({ size }), "animate-spin")} />}
+      </div>
+      {!isLoading &&
+        startIcon &&
+        cloneElement(startIcon as ReactElement<any>, {
+          className: cn("mr-2", iconVariants({ size }), startIcon.props.className),
+        })}
+      {children}
+      {endIcon &&
+        cloneElement(endIcon as ReactElement<any>, {
+          className: cn("ml-2", iconVariants({ size }), endIcon.props.className),
+        })}
+    </Component>
+  );
+}
 
-    return (
-      <Component className={cn(buttonVariants({ variant, size, className }))} ref={ref} {...rest}>
-        <div
-          data-testid="loader-icon"
-          aria-hidden={!isLoading}
-          className={cn(!startIcon && "transition-all", "mr-2", iconVariants({ size }), !isLoading && "mr-0 max-w-0")}
-        >
-          {isLoading && <Loader2Icon className={cn(iconVariants({ size }), "animate-spin")} />}
-        </div>
-        {!isLoading &&
-          startIcon &&
-          cloneElement(startIcon as ReactElement, {
-            className: cn("mr-2", iconVariants({ size }), startIcon.props.className),
-          })}
-        {children}
-        {endIcon &&
-          cloneElement(endIcon as ReactElement, {
-            className: cn("ml-2", iconVariants({ size }), endIcon.props.className),
-          })}
-      </Component>
-    );
-  },
-);
-
-Button.displayName = "Button";
-
-export { Button };
+export { Button, buttonVariants, iconVariants };

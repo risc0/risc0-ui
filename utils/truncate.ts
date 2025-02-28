@@ -1,6 +1,6 @@
 const MAX_LAST_CHUNK_LENGTH = 4;
 
-export const truncate = (text: string, chars = 9): string => {
+function truncate(text: string, chars = 9): string {
   if (chars >= text.length) {
     return text;
   }
@@ -16,4 +16,6 @@ export const truncate = (text: string, chars = 9): string => {
   const lastChunk = text.substr(text.length - MAX_LAST_CHUNK_LENGTH, chars);
 
   return `${firstChunk}…${lastChunk}`;
-};
+}
+
+export { truncate };

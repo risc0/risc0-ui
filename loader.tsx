@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 
-export function Loader({
+function Loader({
   loadingSrc = "/loading.gif",
   loadingText = "Loading…",
 }: { loadingText?: ReactNode; loadingSrc?: string }) {
@@ -11,3 +11,5 @@ export function Loader({
     </div>
   );
 }
+
+export { Loader };

@@ -1,84 +1,67 @@
 import { Slot } from "@radix-ui/react-slot";
 import { ChevronRightIcon, EllipsisIcon } from "lucide-react";
-import { type ComponentProps, type ComponentPropsWithoutRef, type ReactNode, forwardRef } from "react";
+import type { ComponentProps } from "react";
 import { cn } from "./cn";
 
-const Breadcrumb = forwardRef<
-  HTMLElement,
-  ComponentPropsWithoutRef<"nav"> & {
-    separator?: ReactNode;
-  }
->(({ ...props }, ref) => <nav ref={ref} aria-label="breadcrumb" {...props} />);
+function Breadcrumb({ ...rest }: ComponentProps<"nav">) {
+  return <nav aria-label="breadcrumb" {...rest} />;
+}
 
-const BreadcrumbList = forwardRef<HTMLOListElement, ComponentPropsWithoutRef<"ol">>(({ className, ...props }, ref) => (
-  <ol
-    ref={ref}
-    className={cn(
-      "flex flex-wrap items-center gap-1.5 break-words text-muted-foreground text-sm sm:gap-2.5",
-      className,
-    )}
-    {...props}
-  />
-));
+function BreadcrumbList({ className, ...rest }: ComponentProps<"ol">) {
+  return (
+    <ol
+      className={cn(
+        "flex flex-wrap items-center gap-1.5 break-words text-muted-foreground text-sm sm:gap-2.5",
+        className,
+      )}
+      {...rest}
+    />
+  );
+}
 
-const BreadcrumbItem = forwardRef<HTMLLIElement, ComponentPropsWithoutRef<"li">>(({ className, ...props }, ref) => (
-  <li ref={ref} className={cn("inline-flex items-center gap-1.5", className)} {...props} />
-));
+function BreadcrumbItem({ className, ...rest }: ComponentProps<"li">) {
+  return <li className={cn("inline-flex items-center gap-1.5", className)} {...rest} />;
+}
 
-const BreadcrumbLink = forwardRef<
-  HTMLAnchorElement,
-  ComponentPropsWithoutRef<"a"> & {
-    asChild?: boolean;
-  }
->(({ asChild, className, ...props }, ref) => {
+function BreadcrumbLink({ asChild, className, ...rest }: ComponentProps<"a"> & { asChild?: boolean }) {
   const Comp = asChild ? Slot : "a";
 
   return (
     <Comp
       data-testid="breadcrumb-link"
-      ref={ref}
       className={cn("transition-colors hover:text-foreground", className)}
-      {...props}
+      {...rest}
     />
   );
-});
+}
 
-const BreadcrumbPage = forwardRef<HTMLLIElement, ComponentPropsWithoutRef<"span">>(({ className, ...props }, ref) => (
-  <span
-    ref={ref}
-    aria-disabled="true"
-    role="link"
-    aria-current="page"
-    className={cn("text-foreground", className)}
-    {...props}
-  />
-));
+function BreadcrumbPage({ className, ...rest }: ComponentProps<"span">) {
+  return (
+    <span aria-disabled="true" role="link" aria-current="page" className={cn("text-foreground", className)} {...rest} />
+  );
+}
 
-const BreadcrumbSeparator = ({ children, className, ...props }: ComponentProps<"li">) => (
-  <li role="presentation" aria-hidden="true" className={cn("[&>svg]:size-3.5", className)} {...props}>
-    {children ?? <ChevronRightIcon />}
-  </li>
-);
+function BreadcrumbSeparator({ children, className, ...rest }: ComponentProps<"li">) {
+  return (
+    <li role="presentation" aria-hidden="true" className={cn("[&>svg]:size-3.5", className)} {...rest}>
+      {children ?? <ChevronRightIcon />}
+    </li>
+  );
+}
 
-const BreadcrumbEllipsis = ({ className, ...props }: ComponentProps<"span">) => (
-  <span
-    role="presentation"
-    aria-hidden="true"
-    className={cn("flex h-9 w-9 items-center justify-center", className)}
-    {...props}
-  >
-    <EllipsisIcon className="h-4 w-4" />
-    <span className="sr-only">More</span>
-  </span>
-);
-
-BreadcrumbEllipsis.displayName = "BreadcrumbElipssis";
-BreadcrumbSeparator.displayName = "BreadcrumbSeparator";
-BreadcrumbPage.displayName = "BreadcrumbPage";
-BreadcrumbLink.displayName = "BreadcrumbLink";
-Breadcrumb.displayName = "Breadcrumb";
-BreadcrumbList.displayName = "BreadcrumbList";
-BreadcrumbItem.displayName = "BreadcrumbItem";
+function BreadcrumbEllipsis({ className, ...rest }: ComponentProps<"span">) {
+  return (
+    <span
+      role="presentation"
+      aria-hidden="true"
+      className={cn("flex h-9 w-9 items-center justify-center", className)}
+      {...rest}
+    >
+      <EllipsisIcon className="h-4 w-4" />
+      <span className="sr-only">More</span>
+    </span>
+  );
+}
 
 export {
   Breadcrumb,

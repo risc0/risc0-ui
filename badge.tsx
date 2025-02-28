@@ -3,7 +3,7 @@ import type { HTMLAttributes } from "react";
 import type { Simplify } from "type-fest";
 import { cn } from "./cn";
 
-export const badgeVariants = cva(
+const badgeVariants = cva(
   "inline-flex items-center rounded-md border px-2.5 py-0.5 font-bold text-xs transition-colors focus:outline-hidden focus:ring-2 focus:ring-ring focus:ring-offset-2",
   {
     variants: {
@@ -27,6 +27,8 @@ export type BadgeProps = Simplify<
     }
 >;
 
-export function Badge({ className, variant, ...rest }: BadgeProps) {
+function Badge({ className, variant, ...rest }: BadgeProps) {
   return <div data-testid="badge" {...rest} className={cn(badgeVariants({ variant }), className)} />;
 }
+
+export { Badge, badgeVariants };

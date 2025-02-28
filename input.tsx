@@ -1,17 +1,19 @@
-import { type InputHTMLAttributes, type ReactElement, cloneElement, forwardRef } from "react";
-import type { Simplify } from "type-fest";
+import { type ComponentProps, type ReactElement, cloneElement } from "react";
 import { cn } from "./cn";
 
-export type InputProps = Simplify<
-  InputHTMLAttributes<HTMLInputElement> & {
-    startIcon?: ReactElement;
-    endIcon?: ReactElement;
-    wrapperClassName?: string;
-  }
->;
-
-const Input = forwardRef<HTMLInputElement, InputProps>(
-  ({ startIcon, endIcon, className, type, wrapperClassName, ...rest }, ref) => (
+function Input({
+  startIcon,
+  endIcon,
+  className,
+  type,
+  wrapperClassName,
+  ...rest
+}: ComponentProps<"input"> & {
+  startIcon?: ReactElement<any>;
+  endIcon?: ReactElement<any>;
+  wrapperClassName?: string;
+}) {
+  return (
     <div className={cn("relative", wrapperClassName)}>
       <input
         type={type}
@@ -21,27 +23,24 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
           endIcon && "pr-9",
           className,
         )}
-        ref={ref}
         {...rest}
       />
       {startIcon &&
-        cloneElement(startIcon as ReactElement, {
+        cloneElement(startIcon as ReactElement<any>, {
           className: cn(
             "absolute top-2.5 left-3 size-4 text-muted-foreground peer-focus-visible:text-primary peer-disabled:opacity-60",
             startIcon.props.className,
           ),
         })}
       {endIcon &&
-        cloneElement(endIcon as ReactElement, {
+        cloneElement(endIcon as ReactElement<any>, {
           className: cn(
             "absolute top-2.5 right-3 size-4 text-muted-foreground peer-focus-visible:text-primary peer-disabled:opacity-60",
             endIcon.props.className,
           ),
         })}
     </div>
-  ),
-);
-
-Input.displayName = "Input";
+  );
+}
 
 export { Input };

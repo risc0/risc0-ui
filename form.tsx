@@ -1,14 +1,6 @@
 import type * as LabelPrimitive from "@radix-ui/react-label";
 import { Slot } from "@radix-ui/react-slot";
-import {
-  type ComponentPropsWithoutRef,
-  type ElementRef,
-  type HTMLAttributes,
-  createContext,
-  forwardRef,
-  useContext,
-  useId,
-} from "react";
+import { type ComponentProps, type HTMLAttributes, createContext, useContext, useId } from "react";
 import {
   Controller,
   type ControllerProps,
@@ -72,80 +64,54 @@ type FormItemContextValue = {
 
 const FormItemContext = createContext<FormItemContextValue>({} as FormItemContextValue);
 
-const FormItem = forwardRef<
-  HTMLDivElement,
-  HTMLAttributes<HTMLDivElement> & {
-    dense?: boolean;
-  }
->(({ className, dense = true, ...rest }, ref) => {
+function FormItem({ className, dense = true, ...rest }: HTMLAttributes<HTMLDivElement> & { dense?: boolean }) {
   const id = useId();
 
   return (
     <FormItemContext.Provider value={{ id }}>
-      <div ref={ref} className={cn("space-y-2", dense && "space-y-1", className)} {...rest} />
+      <div className={cn("space-y-2", dense && "space-y-1", className)} {...rest} />
     </FormItemContext.Provider>
   );
-});
+}
 
-const FormLabel = forwardRef<
-  ElementRef<typeof LabelPrimitive.Root>,
-  ComponentPropsWithoutRef<typeof LabelPrimitive.Root>
->(({ className, ...rest }, ref) => {
+function FormLabel({ className, ...rest }: ComponentProps<typeof LabelPrimitive.Root>) {
   const { error, formItemId } = useFormField();
 
-  return <Label ref={ref} className={cn(error && "text-destructive", className)} htmlFor={formItemId} {...rest} />;
-});
+  return <Label className={cn(error && "text-destructive", className)} htmlFor={formItemId} {...rest} />;
+}
 
-const FormControl = forwardRef<ElementRef<typeof Slot>, ComponentPropsWithoutRef<typeof Slot>>(({ ...rest }, ref) => {
+function FormControl({ ...rest }: ComponentProps<typeof Slot>) {
   const { error, formItemId, formDescriptionId, formMessageId } = useFormField();
 
   return (
     <Slot
-      ref={ref}
       id={formItemId}
       aria-describedby={error ? `${formDescriptionId} ${formMessageId}` : `${formDescriptionId}`}
       aria-invalid={!!error}
       {...rest}
     />
   );
-});
+}
 
-const FormDescription = forwardRef<HTMLParagraphElement, HTMLAttributes<HTMLParagraphElement>>(
-  ({ className, ...rest }, ref) => {
-    const { formDescriptionId } = useFormField();
+function FormDescription({ className, ...rest }: HTMLAttributes<HTMLParagraphElement>) {
+  const { formDescriptionId } = useFormField();
 
-    return (
-      <p ref={ref} id={formDescriptionId} className={cn("text-[0.8rem] text-muted-foreground", className)} {...rest} />
-    );
-  },
-);
+  return <p id={formDescriptionId} className={cn("text-[0.8rem] text-muted-foreground", className)} {...rest} />;
+}
 
-const FormMessage = forwardRef<HTMLParagraphElement, HTMLAttributes<HTMLParagraphElement>>(
-  ({ className, children, ...rest }, ref) => {
-    const { error, formMessageId } = useFormField();
-    const body = error ? String(error?.message) : children;
+function FormMessage({ className, children, ...rest }: HTMLAttributes<HTMLParagraphElement>) {
+  const { error, formMessageId } = useFormField();
+  const body = error ? String(error?.message) : children;
 
-    if (!body) {
-      return null;
-    }
+  if (!body) {
+    return null;
+  }
 
-    return (
-      <p
-        ref={ref}
-        id={formMessageId}
-        className={cn("animate-head-shake text-destructive text-xs", className)}
-        {...rest}
-      >
-        {body}
-      </p>
-    );
-  },
-);
-
-FormMessage.displayName = "FormMessage";
-FormItem.displayName = "FormItem";
-FormLabel.displayName = "FormLabel";
-FormControl.displayName = "FormControl";
-FormDescription.displayName = "FormDescription";
+  return (
+    <p id={formMessageId} className={cn("animate-head-shake text-destructive text-xs", className)} {...rest}>
+      {body}
+    </p>
+  );
+}
 
 export { useFormField, Form, FormItem, FormLabel, FormControl, FormDescription, FormMessage, FormField };
