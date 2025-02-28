@@ -1,12 +1,9 @@
 {
   "name": "@risc0/ui",
-  "version": "0.0.307",
+  "version": "0.0.308",
   "private": false,
   "sideEffects": false,
   "type": "module",
-  "exports": {
-    "./globals.css": "./styles/globals.css"
-  },
   "scripts": {
     "check:format": "bunx @biomejs/biome check . --write --unsafe",
     "check:test": "vitest run --silent --coverage && istanbul-badges-readme",
