@@ -8,6 +8,7 @@
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "target": "es2022",
+    "erasableSyntaxOnly": true,
 
     /* Strictness */
     "checkJs": true,
