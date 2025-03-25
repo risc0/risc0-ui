@@ -1,5 +1,3 @@
-"use client";
-
 import * as RadioGroupPrimitive from "@radix-ui/react-radio-group";
 import type { ComponentProps } from "react";
 import { cn } from "./cn";

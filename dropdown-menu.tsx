@@ -1,5 +1,3 @@
-"use client";
-
 import * as DropdownMenuPrimitive from "@radix-ui/react-dropdown-menu";
 import { CheckIcon, ChevronRightIcon, DotIcon } from "lucide-react";
 import type { ComponentProps, HTMLAttributes } from "react";
