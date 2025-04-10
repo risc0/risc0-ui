@@ -37,7 +37,14 @@ function BreadcrumbLink({ asChild, className, ...rest }: ComponentProps<"a"> & {
 
 function BreadcrumbPage({ className, ...rest }: ComponentProps<"span">) {
   return (
-    <span aria-disabled="true" role="link" aria-current="page" className={cn("text-foreground", className)} {...rest} />
+    <span
+      aria-disabled="true"
+      role="link"
+      aria-current="page"
+      tabIndex={0}
+      className={cn("text-foreground", className)}
+      {...rest}
+    />
   );
 }
 
