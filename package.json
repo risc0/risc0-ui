@@ -1,6 +1,6 @@
 {
   "name": "@risc0/ui",
-  "version": "0.0.356",
+  "version": "0.0.357",
   "private": false,
   "sideEffects": false,
   "type": "module",
@@ -46,8 +46,8 @@
     "@t3-oss/env-nextjs": "0.13.0",
     "@tailwindcss/postcss": "4.1.4",
     "@tanstack/match-sorter-utils": "8.19.4",
-    "@tanstack/react-query": "5.74.7",
-    "@tanstack/react-query-devtools": "5.74.7",
+    "@tanstack/react-query": "5.74.9",
+    "@tanstack/react-query-devtools": "5.74.9",
     "@tanstack/react-table": "8.21.3",
     "@total-typescript/ts-reset": "0.6.1",
     "@types/ws": "8.18.1",
@@ -99,7 +99,7 @@
     "turbo": "2.5.2",
     "type-fest": "4.40.1",
     "typescript": "5.8.3",
-    "viem": "2.28.0",
+    "viem": "2.28.1",
     "wagmi": "2.15.0",
     "ws": "8.18.1",
     "zod": "3.24.3"
@@ -118,7 +118,7 @@
     "react": "^19",
     "react-dom": "^19"
   },
-  "packageManager": "bun@1.2.10",
+  "packageManager": "bun@1.2.11",
   "overrides": {
     "react-is": "19.0.0-rc-6f23540c7d-20240528"
   }
