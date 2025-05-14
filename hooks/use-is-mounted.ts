@@ -1,16 +1,13 @@
-import { useCallback, useEffect, useRef } from "react";
+"use client";
 
-export function useIsMounted(): () => boolean {
-  const mountedRef = useRef<boolean>(false);
-  const get = useCallback(() => mountedRef.current, []);
+import { useEffect, useState } from "react";
+
+export function useIsMounted() {
+  const [isMounted, setIsMounted] = useState<boolean>(false);
 
   useEffect(() => {
-    mountedRef.current = true;
-
-    return () => {
-      mountedRef.current = false;
-    };
+    setIsMounted(true);
   }, []);
 
-  return get;
+  return isMounted;
 }
