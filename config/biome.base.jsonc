@@ -44,7 +44,7 @@
         "noReExportAll": "warn"
       },
       "style": {
-        "useNodejsImportProtocol": "off",
+        "useNodejsImportProtocol": "error",
         "noNonNullAssertion": "warn",
         "noNegationElse": "warn",
         "useBlockStatements": "error",
