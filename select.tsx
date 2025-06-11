@@ -1,6 +1,6 @@
-import * as SelectPrimitive from "@radix-ui/react-select";
 import { cva } from "class-variance-authority";
 import { CheckIcon, ChevronDownIcon, ChevronUpIcon, ChevronsUpDownIcon } from "lucide-react";
+import { Select as SelectPrimitive } from "radix-ui";
 import type { ComponentProps } from "react";
 import { cn } from "./cn";
 

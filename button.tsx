@@ -1,6 +1,6 @@
-import { Slot } from "@radix-ui/react-slot";
 import { type VariantProps, cva } from "class-variance-authority";
 import { Loader2Icon } from "lucide-react";
+import { Slot as SlotPrimitive } from "radix-ui";
 import { type ComponentProps, type ReactElement, cloneElement } from "react";
 import { cn } from "./cn";
 
@@ -62,7 +62,7 @@ function Button({
     startIcon?: ReactElement<any>;
     endIcon?: ReactElement<any>;
   }) {
-  const Component = asChild ? Slot : "button";
+  const Component = asChild ? SlotPrimitive.Slot : "button";
 
   return (
     <Component className={cn(buttonVariants({ variant, size, className }))} {...rest}>

@@ -1,10 +1,8 @@
 "use client";
 
-import type { DialogProps } from "@radix-ui/react-dialog";
 import { Command as CommandPrimitive } from "cmdk";
 import { SearchIcon } from "lucide-react";
 import type { ComponentProps, HTMLAttributes } from "react";
-import type { Simplify } from "type-fest";
 import { cn } from "./cn";
 import { Dialog, DialogContent } from "./dialog";
 
@@ -20,9 +18,7 @@ function Command({ className, ...rest }: ComponentProps<typeof CommandPrimitive>
   );
 }
 
-export type CommandDialogProps = Simplify<DialogProps>;
-
-function CommandDialog({ children, ...rest }: CommandDialogProps) {
+function CommandDialog({ children, ...rest }: ComponentProps<typeof Dialog>) {
   return (
     <Dialog {...rest}>
       <DialogContent className="overflow-hidden p-0">

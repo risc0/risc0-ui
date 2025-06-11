@@ -1,5 +1,5 @@
-import type * as LabelPrimitive from "@radix-ui/react-label";
-import { Slot } from "@radix-ui/react-slot";
+import { type Label as LabelPrimitive, Slot as SlotPrimitive } from "radix-ui";
+
 import { type ComponentProps, type HTMLAttributes, createContext, useContext, useId } from "react";
 import {
   Controller,
@@ -80,11 +80,11 @@ function FormLabel({ className, ...rest }: ComponentProps<typeof LabelPrimitive.
   return <Label className={cn(error && "text-destructive", className)} htmlFor={formItemId} {...rest} />;
 }
 
-function FormControl({ ...rest }: ComponentProps<typeof Slot>) {
+function FormControl({ ...rest }: ComponentProps<typeof SlotPrimitive.Slot>) {
   const { error, formItemId, formDescriptionId, formMessageId } = useFormField();
 
   return (
-    <Slot
+    <SlotPrimitive.Slot
       id={formItemId}
       aria-describedby={error ? `${formDescriptionId} ${formMessageId}` : `${formDescriptionId}`}
       aria-invalid={!!error}

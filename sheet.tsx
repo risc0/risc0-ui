@@ -1,6 +1,6 @@
-import * as SheetPrimitive from "@radix-ui/react-dialog";
 import { cva } from "class-variance-authority";
 import { XIcon } from "lucide-react";
+import { Dialog as SheetPrimitive } from "radix-ui";
 import type { ComponentProps, HTMLAttributes } from "react";
 import { cn } from "./cn";
 
