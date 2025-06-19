@@ -1,4 +1,4 @@
-import { type VariantProps, cva } from "class-variance-authority";
+import { cva, type VariantProps } from "class-variance-authority";
 import type { HTMLAttributes } from "react";
 import type { Simplify } from "type-fest";
 import { cn } from "./cn";

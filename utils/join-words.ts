@@ -21,7 +21,7 @@ export function joinWords(str: string): string {
 
   // Insert a space before each uppercase letter that is not at the start of the string or after another uppercase letter
   const formattedString = str.replace(/(?<=[a-z])(?=[A-Z])/g, " ");
-  const wordsList = formattedString.split(/[\s-_\/\\.,]/); // Remove spaces, hyphens, underscores, slashes, backslashes, dots, and commas
+  const wordsList = formattedString.split(/[\s-_/\\.,]/); // Remove spaces, hyphens, underscores, slashes, backslashes, dots, and commas
 
   const formattedWords = wordsList.map((word) => {
     const lowerCaseWord = word.toLowerCase();

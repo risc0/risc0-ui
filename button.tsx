@@ -1,7 +1,7 @@
-import { type VariantProps, cva } from "class-variance-authority";
+import { cva, type VariantProps } from "class-variance-authority";
 import { Loader2Icon } from "lucide-react";
 import { Slot as SlotPrimitive } from "radix-ui";
-import { type ComponentProps, type ReactElement, cloneElement } from "react";
+import { type ComponentProps, cloneElement, type ReactElement } from "react";
 import { cn } from "./cn";
 
 const buttonVariants = cva(

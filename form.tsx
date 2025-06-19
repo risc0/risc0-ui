@@ -1,6 +1,6 @@
 import { type Label as LabelPrimitive, Slot as SlotPrimitive } from "radix-ui";
 
-import { type ComponentProps, type HTMLAttributes, createContext, useContext, useId } from "react";
+import { type ComponentProps, createContext, type HTMLAttributes, useContext, useId } from "react";
 import {
   Controller,
   type ControllerProps,
