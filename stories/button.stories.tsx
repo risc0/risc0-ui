@@ -1,5 +1,5 @@
 /* c8 ignore start */
-import { Rocket, RocketIcon, RockingChair } from "lucide-react";
+import { RocketIcon } from "lucide-react";
 import { useState } from "react";
 import { Button } from "../button";
 

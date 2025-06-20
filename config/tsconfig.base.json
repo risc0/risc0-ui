@@ -17,12 +17,14 @@
     "verbatimModuleSyntax": true,
     "noImplicitAny": false,
     "noImplicitOverride": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
 
     /* Bundled projects */
     "incremental": true,
     "jsx": "preserve",
     "lib": ["dom", "dom.iterable", "ES2022"],
-    "module": "ESNext",
+    "module": "Preserve",
     "moduleResolution": "Bundler",
     "noEmit": true,
     "plugins": [{ "name": "next" }],
