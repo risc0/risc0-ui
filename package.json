@@ -1,6 +1,6 @@
 {
   "name": "@risc0/ui",
-  "version": "0.0.396",
+  "version": "0.0.397",
   "private": false,
   "sideEffects": false,
   "type": "module",
@@ -16,7 +16,7 @@
     "story": "ladle serve"
   },
   "dependencies": {
-    "@biomejs/biome": "2.0.0",
+    "@biomejs/biome": "2.0.4",
     "@formkit/auto-animate": "0.8.2",
     "@hookform/resolvers": "5.1.1",
     "@msgpack/msgpack": "3.1.2",
@@ -24,13 +24,13 @@
     "@poppinss/intl-formatter": "3.0.5",
     "@react-hook/resize-observer": "2.0.2",
     "@react-oauth/google": "0.12.2",
-    "@shadergradient/react": "2.0.27",
+    "@shadergradient/react": "2.1.0",
     "@supabase/supabase-js": "2.50.0",
     "@t3-oss/env-nextjs": "0.13.8",
     "@tailwindcss/postcss": "4.1.10",
     "@tanstack/match-sorter-utils": "8.19.4",
-    "@tanstack/react-query": "5.80.10",
-    "@tanstack/react-query-devtools": "5.80.10",
+    "@tanstack/react-query": "5.81.2",
+    "@tanstack/react-query-devtools": "5.81.2",
     "@tanstack/react-table": "8.21.3",
     "@total-typescript/ts-reset": "0.6.1",
     "@types/ws": "8.18.1",
@@ -47,14 +47,14 @@
     "cmdk": "1.1.1",
     "deepmerge": "4.3.1",
     "dnum": "2.15.0",
-    "es-toolkit": "1.39.3",
+    "es-toolkit": "1.39.4",
     "google-auth-library": "9.15.1",
     "javascript-time-ago": "2.5.11",
     "ky": "1.8.1",
-    "lucide-react": "0.518.0",
+    "lucide-react": "0.522.0",
     "marked": "15.0.12",
     "mermaid": "10.9.3",
-    "motion": "12.18.1",
+    "motion": "12.18.2",
     "next-extra": "0.6.2",
     "next-themes": "0.4.6",
     "notion-client": "6.16.0",
@@ -87,7 +87,7 @@
     "turbo": "2.5.4",
     "type-fest": "4.41.0",
     "typescript": "5.8.3",
-    "viem": "2.31.3",
+    "viem": "2.31.4",
     "wagmi": "2.15.6",
     "ws": "8.18.2",
     "zod": "3.25.67"
@@ -106,7 +106,7 @@
     "react": "^19",
     "react-dom": "^19"
   },
-  "packageManager": "bun@1.2.16",
+  "packageManager": "bun@1.2.17",
   "overrides": {
     "react-is": "19.0.0-rc-6f23540c7d-20240528"
   }
