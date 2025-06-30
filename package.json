@@ -1,6 +1,6 @@
 {
   "name": "@risc0/ui",
-  "version": "0.0.406",
+  "version": "0.0.407",
   "private": false,
   "sideEffects": false,
   "type": "module",
