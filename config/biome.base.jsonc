@@ -38,7 +38,7 @@
         "noExplicitAny": "off",
         "noImplicitAnyLet": "off",
         "noEmptyBlockStatements": "warn",
-        "noConsole": "off"
+        "noConsole": { "level": "info", "options": { "allow": ["warn", "error", "info", "debug"] } }
       },
       "performance": {
         "noBarrelFile": "warn",
