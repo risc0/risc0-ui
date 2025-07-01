@@ -1,6 +1,6 @@
 {
   "name": "@risc0/ui",
-  "version": "0.0.408",
+  "version": "0.0.409",
   "private": false,
   "sideEffects": false,
   "type": "module",
@@ -52,7 +52,7 @@
     "lucide-react": "0.525.0",
     "marked": "15.0.12",
     "mermaid": "10.9.3",
-    "motion": "12.19.4",
+    "motion": "12.20.1",
     "next-extra": "0.6.2",
     "next-themes": "0.4.6",
     "notion-client": "6.16.0",
