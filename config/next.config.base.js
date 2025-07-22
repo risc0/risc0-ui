@@ -17,6 +17,13 @@ export const nextConfigBase = {
     contentDispositionType: "attachment",
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
   },
+  experimental: {
+    // Activate new client-side router improvements
+    clientSegmentCache: true,
+
+    // Enable persistent caching for the turbopack dev server and build.
+    turbopackPersistentCaching: true,
+  },
   logging: {
     fetches: {
       fullUrl: true,

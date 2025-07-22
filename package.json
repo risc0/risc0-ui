@@ -1,6 +1,6 @@
 {
   "name": "@risc0/ui",
-  "version": "0.0.417",
+  "version": "0.0.418",
   "private": false,
   "sideEffects": false,
   "type": "module",
@@ -53,7 +53,7 @@
     "marked": "15.0.12",
     "mermaid": "10.9.3",
     "motion": "12.23.6",
-    "next-extra": "0.6.2",
+    "next-extra": "0.6.4",
     "next-themes": "0.4.6",
     "notion-client": "6.16.0",
     "notion-types": "6.16.0",
