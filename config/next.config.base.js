@@ -19,7 +19,7 @@ export const nextConfigBase = {
   },
   experimental: {
     // Activate new client-side router improvements
-    clientSegmentCache: true,
+    clientSegmentCache: false, // do not turn on, breaks nav
 
     // Enable persistent caching for the turbopack dev server and build.
     turbopackPersistentCaching: true,
