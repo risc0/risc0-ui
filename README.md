@@ -1,4 +1,4 @@
-# 🎨 `@risc0/ui`
+# 🎨 Boundless UI
 
 Building blocks for UI applications at RISC Zero.
 
