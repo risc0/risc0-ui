@@ -1,6 +1,6 @@
 # 🎨 Boundless UI
 
-Building blocks for UI applications at RISC Zero.
+Building blocks for UI applications at Boundless.
 
 https://www.npmjs.com/package/@risc0/ui
 
