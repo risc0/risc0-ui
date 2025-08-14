@@ -22,6 +22,7 @@
         "useFocusableInteractive": "info"
       },
       "correctness": {
+        "useUniqueElementIds": "off",
         "noUndeclaredVariables": "error",
         "noUnusedVariables": "warn",
         "noUnusedImports": "off",
@@ -73,7 +74,6 @@
         "noUselessElse": "error"
       },
       "nursery": {
-        "useUniqueElementIds": "off",
         "useSortedClasses": {
           "level": "info",
           "options": {
